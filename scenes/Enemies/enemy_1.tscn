@@ -6,6 +6,10 @@
 radius = 34.0
 height = 138.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l3ixe"]
+radius = 48.0
+height = 134.0
+
 [node name="Enemy1" type="CharacterBody2D" unique_id=100668412]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1445215298]
@@ -16,3 +20,12 @@ texture = ExtResource("1_l3ixe")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=644693382]
 position = Vector2(104, 111)
 shape = SubResource("CapsuleShape2D_h55bv")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=959993088]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1264151462]
+position = Vector2(103, 113)
+shape = SubResource("CapsuleShape2D_l3ixe")
+debug_color = Color(0.77681094, 0.28775164, 0.83143705, 0.41960785)

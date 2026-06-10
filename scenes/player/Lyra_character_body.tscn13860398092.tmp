@@ -242,7 +242,7 @@ debug_color = Color(0.9882204, 0, 0.3027967, 0.41960785)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=726138740]
 sprite_frames = SubResource("SpriteFrames_mfp5r")
-animation = &"lyra_basic_attack"
+animation = &"lyra_walk"
 
 [node name="AbilityManager" type="Node2D" parent="." unique_id=2147113723]
 script = ExtResource("5_73p6n")

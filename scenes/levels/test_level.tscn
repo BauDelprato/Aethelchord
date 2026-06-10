@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cuuahk6y8is25" path="res://assets/tiles/tileset_32x32(new).png" id="1_yautc"]
 [ext_resource type="PackedScene" uid="uid://dcuvfonru1uq0" path="res://scenes/player/Lyra_character_body.tscn" id="2_fr1um"]
+[ext_resource type="PackedScene" uid="uid://qbawjad4msei" path="res://scenes/Enemies/enemy_1.tscn" id="3_fr1um"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v45ci"]
 texture = ExtResource("1_yautc")
@@ -257,3 +258,6 @@ tile_map_data = PackedByteArray("AAD1/wMAAAAEAAAAAAD2/wMAAAABAAAAAAD3/wMAAAADAAA
 tile_set = SubResource("TileSet_48ne7")
 
 [node name="Lyra" parent="." unique_id=1019969014 instance=ExtResource("2_fr1um")]
+
+[node name="Enemy1" parent="." unique_id=100668412 instance=ExtResource("3_fr1um")]
+position = Vector2(186, -134)
