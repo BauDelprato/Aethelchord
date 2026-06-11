@@ -3,8 +3,10 @@ extends CharacterBody2D
 @onready var animation = $AnimatedSprite2D
 @onready var lyra_health = $HealthManager
 @onready var lyra_ability = $AbilityManager
+@onready var attackbox = $Attackbox
 
 var is_attacking = false
+var facing_right = true
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -17,17 +19,27 @@ func _physics_process(delta):
 	var direction = Input.get_axis("ui_left", "ui_right")
 
 	if Input.is_action_just_pressed("attack") and !is_attacking:
+		
 		$AbilityManager.attack()
+		
 
 	if direction > 0:
 		animation.flip_h = false
+		facing_right = true
 	elif direction < 0:
 		animation.flip_h = true
+		facing_right = false
 
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	if facing_right:
+		attackbox.position.x = 0
+	else:
+		attackbox.position.x = -105
+		
 
 	if !is_attacking:
 		update_animation(direction)

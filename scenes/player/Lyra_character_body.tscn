@@ -2,33 +2,59 @@
 
 [ext_resource type="Script" uid="uid://bnfr8cj2jhtp4" path="res://scripts/player/character_body_2d.gd" id="1_s25n1"]
 [ext_resource type="Texture2D" uid="uid://c4e7mhedsmhe6" path="res://assets/sprites/lyra/lyre idle 1.png" id="2_lxlh8"]
-[ext_resource type="Texture2D" uid="uid://dlpkfyredtmae" path="res://assets/sprites/placeholder_lyra/Dude_Monster_Attack1_4.png" id="3_73p6n"]
 [ext_resource type="Texture2D" uid="uid://1mb51eaudnh6" path="res://assets/sprites/lyra/lyre walk.png" id="3_87eo2"]
-[ext_resource type="Script" uid="uid://pnbn3cnqtqwg" path="res://scripts/player/health_manager.gd" id="4_6db5m"]
+[ext_resource type="Texture2D" uid="uid://cxuyrs2rgsi4q" path="res://assets/sprites/lyra/lyre attack standing2.png" id="4_73p6n"]
 [ext_resource type="Script" uid="uid://xuqgcvhd7fee" path="res://scripts/player/ability_manager.gd" id="5_73p6n"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yqqr5"]
 radius = 8.0
 height = 43.0
 
+[sub_resource type="GDScript" id="GDScript_6db5m"]
+script/source = "extends Node2D
+#CLASE MANEJADORA DE SALUD
+signal died
+signal health_changed(current)
+
+@export var max_health := 3
+@export var current_health := max_health
+
+func take_damage(amount):
+
+	current_health -= amount
+
+	health_changed.emit(current_health)
+
+	if current_health <= 0:
+		died.emit()
+"
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6db5m"]
 height = 78.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0b6k0"]
-atlas = ExtResource("3_73p6n")
-region = Rect2(0, 0, 32, 32)
+atlas = ExtResource("4_73p6n")
+region = Rect2(0, 0, 208, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lyghn"]
-atlas = ExtResource("3_73p6n")
-region = Rect2(32, 0, 32, 32)
+atlas = ExtResource("4_73p6n")
+region = Rect2(208, 0, 208, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0jxbt"]
-atlas = ExtResource("3_73p6n")
-region = Rect2(64, 0, 32, 32)
+atlas = ExtResource("4_73p6n")
+region = Rect2(416, 0, 208, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r2lba"]
-atlas = ExtResource("3_73p6n")
-region = Rect2(96, 0, 32, 32)
+atlas = ExtResource("4_73p6n")
+region = Rect2(624, 0, 208, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gp8y2"]
+atlas = ExtResource("4_73p6n")
+region = Rect2(832, 0, 208, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_003l0"]
+atlas = ExtResource("4_73p6n")
+region = Rect2(1040, 0, 208, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h0d5q"]
 atlas = ExtResource("2_lxlh8")
@@ -128,6 +154,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_r2lba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gp8y2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_003l0")
 }],
 "loop": false,
 "name": &"lyra_basic_attack",
@@ -229,7 +261,7 @@ hframes = 7
 zoom = Vector2(1.2, 1.2)
 
 [node name="HealthManager" type="Node2D" parent="." unique_id=20784656]
-script = ExtResource("4_6db5m")
+script = SubResource("GDScript_6db5m")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=247596597]
 collision_layer = 2
@@ -241,15 +273,19 @@ shape = SubResource("CapsuleShape2D_6db5m")
 debug_color = Color(0.9882204, 0, 0.3027967, 0.41960785)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=726138740]
+position = Vector2(4, 0)
 sprite_frames = SubResource("SpriteFrames_mfp5r")
-animation = &"lyra_basic_attack"
+animation = &"lyra_idle"
 
 [node name="AbilityManager" type="Node2D" parent="." unique_id=2147113723]
 script = ExtResource("5_73p6n")
 
 [node name="Attackbox" type="Area2D" parent="." unique_id=1770926274]
+collision_layer = 16
+collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attackbox" unique_id=1733416785]
-position = Vector2(53, -1)
+position = Vector2(58, -1)
 shape = SubResource("CapsuleShape2D_73p6n")
+disabled = true
 debug_color = Color(0.9999997, 0.968882, 0.3187083, 0.41960785)
