@@ -226,6 +226,7 @@ texture = ExtResource("2_lxlh8")
 hframes = 7
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1390850156]
+offset = Vector2(0, -210)
 zoom = Vector2(1.2, 1.2)
 
 [node name="HealthManager" type="Node2D" parent="." unique_id=20784656]
@@ -248,6 +249,7 @@ animation = &"lyra_basic_attack"
 script = ExtResource("5_73p6n")
 
 [node name="Attackbox" type="Area2D" parent="." unique_id=1770926274]
+position = Vector2(4, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attackbox" unique_id=1733416785]
 position = Vector2(53, -1)
