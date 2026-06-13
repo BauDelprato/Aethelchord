@@ -83,10 +83,6 @@ region = Rect2(832, 0, 208, 99)
 atlas = ExtResource("4_n4tnu")
 region = Rect2(1040, 0, 208, 99)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ya451"]
-atlas = ExtResource("4_n4tnu")
-region = Rect2(1248, 0, 208, 99)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_h0d5q"]
 atlas = ExtResource("2_lxlh8")
 region = Rect2(0, 0, 61, 99)
@@ -246,22 +242,22 @@ region = Rect2(1300, 0, 100, 99)
 [sub_resource type="SpriteFrames" id="SpriteFrames_mfp5r"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_0b6k0")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_lyghn")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_0jxbt")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_r2lba")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_gp8y2")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_003l0")
 }],
 "loop": false,
@@ -269,28 +265,25 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_cdfg4")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_bsmil")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_tg7qm")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_chgwf")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_hs6h5")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_h1pi4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ya451")
 }],
-"loop": true,
+"loop": false,
 "name": &"lyra_basic_attack+walk",
 "speed": 5.0
 }, {
@@ -348,7 +341,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6ijru")
 }],
-"loop": true,
+"loop": false,
 "name": &"lyra_jump",
 "speed": 5.0
 }, {
@@ -380,7 +373,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_df7jq")
 }],
-"loop": true,
+"loop": false,
 "name": &"lyra_jump+walk",
 "speed": 5.0
 }, {
@@ -468,7 +461,7 @@ debug_color = Color(0.9882204, 0, 0.3027967, 0.41960785)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=726138740]
 position = Vector2(4, 0)
 sprite_frames = SubResource("SpriteFrames_mfp5r")
-animation = &"lyra_basic_attack+walk"
+animation = &"lyra_basic_attack"
 
 [node name="AbilityManager" type="Node2D" parent="." unique_id=2147113723]
 script = ExtResource("5_73p6n")

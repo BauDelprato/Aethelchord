@@ -28,10 +28,12 @@ func _physics_process(delta):
 	# Ataque
 	if Input.is_action_just_pressed("attack") and !is_attacking:
 		is_attacking = true
+
 		if direction != 0:
 			current_attack_animation = "lyra_basic_attack+walk"
 		else:
 			current_attack_animation = "lyra_basic_attack"
+
 		animation.play(current_attack_animation)
 		$AbilityManager.attack()
 
@@ -63,16 +65,23 @@ func _physics_process(delta):
 
 func update_animation(direction):
 	
-	# Animaciones de ataque
+	#ataque
 	if is_attacking:
 		if direction != 0:
-			if animation.animation != "lyra_basic_attack+walk":
+			if animation.animation == "lyra_basic_attack":
+				var frame = animation.frame
 				animation.play("lyra_basic_attack+walk")
-				
+				animation.frame = frame
 		else:
-			if animation.animation != "lyra_basic_attack":
+			if animation.animation == "lyra_basic_attack+walk":
+				var frame = animation.frame
 				animation.play("lyra_basic_attack")
+				animation.frame = frame
 		return
+	
+	# Animaciones de ataque
+	if is_attacking:
+		return 
 
 	# Animaciones de salto
 	if not is_on_floor():
@@ -91,12 +100,3 @@ func update_animation(direction):
 	else:
 		if animation.animation != "lyra_idle":
 			animation.play("lyra_idle")
-
-
-func _on_animated_sprite_2d_animation_finished():
-
-	# Cuando termina cualquier animación de ataque,
-	# vuelve a permitir atacar
-	if animation.animation == "lyra_basic_attack" \
-	or animation.animation == "lyra_basic_attack+walk":
-		is_attacking = false
