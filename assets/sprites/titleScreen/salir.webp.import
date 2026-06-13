@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ocpt12ianfla"
-path="res://.godot/imported/Sprite-0001-contorno-negro.png-a588e01a35daf9d084fb9174fdcf7169.ctex"
+uid="uid://bik25s01kekil"
+path="res://.godot/imported/salir.webp-ac285b4468786cfb6b09f52f1c03c928.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/Sprite-0001-contorno-negro.png"
-dest_files=["res://.godot/imported/Sprite-0001-contorno-negro.png-a588e01a35daf9d084fb9174fdcf7169.ctex"]
+source_file="res://assets/sprites/titleScreen/salir.webp"
+dest_files=["res://.godot/imported/salir.webp-ac285b4468786cfb6b09f52f1c03c928.ctex"]
 
 [params]
 
