@@ -3,11 +3,13 @@
 [ext_resource type="Script" uid="uid://bnfr8cj2jhtp4" path="res://scripts/player/character_body_2d.gd" id="1_s25n1"]
 [ext_resource type="Texture2D" uid="uid://c4e7mhedsmhe6" path="res://assets/sprites/lyra/lyre idle 1.png" id="2_lxlh8"]
 [ext_resource type="Texture2D" uid="uid://1mb51eaudnh6" path="res://assets/sprites/lyra/lyre walk.png" id="3_87eo2"]
+[ext_resource type="Script" uid="uid://d4j77xrl0b3r2" path="res://scripts/enemies/hurtbox.gd" id="3_lh0r4"]
 [ext_resource type="Texture2D" uid="uid://cxuyrs2rgsi4q" path="res://assets/sprites/lyra/lyre attack standing2.png" id="4_73p6n"]
 [ext_resource type="Texture2D" uid="uid://qt77f82nxxir" path="res://assets/sprites/lyra/lyre attack+walk simplified.png" id="4_n4tnu"]
 [ext_resource type="Texture2D" uid="uid://dr7ea3vefvu57" path="res://assets/sprites/lyra/lyre jump idle.png" id="5_5ns0u"]
 [ext_resource type="Script" uid="uid://xuqgcvhd7fee" path="res://scripts/player/ability_manager.gd" id="5_73p6n"]
 [ext_resource type="Texture2D" uid="uid://dplq10wfy3ff7" path="res://assets/sprites/lyra/lyre jump walk.png" id="6_j2ki5"]
+[ext_resource type="Texture2D" uid="uid://bihmd668l1fdm" path="res://assets/sprites/lyra/lyre damage.png" id="7_j2ki5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yqqr5"]
 radius = 8.0
@@ -19,17 +21,24 @@ script/source = "extends Node2D
 signal died
 signal health_changed(current)
 
-@export var max_health := 3
-@export var current_health := max_health
+var max_health := 5
+var current_health := max_health
+@onready var Hurtbox = $\"../Hurtbox\"
+
+func _on_hurtbox_area_entered(area):
+	take_damage(1)
+
 
 func take_damage(amount):
-
+	
 	current_health -= amount
-
+	print(\"LYRA RECIBIÓ DAÑO, VIDA ACTUAL: \", current_health )
 	health_changed.emit(current_health)
 
 	if current_health <= 0:
+		print(\"LYRA DE MURIÓ :c\")
 		died.emit()
+		return
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6db5m"]
@@ -182,6 +191,26 @@ region = Rect2(1008, 0, 144, 144)
 [sub_resource type="AtlasTexture" id="AtlasTexture_df7jq"]
 atlas = ExtResource("6_j2ki5")
 region = Rect2(1152, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya451"]
+atlas = ExtResource("7_j2ki5")
+region = Rect2(0, 0, 61, 99)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrrhg"]
+atlas = ExtResource("7_j2ki5")
+region = Rect2(61, 0, 61, 99)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48mpt"]
+atlas = ExtResource("7_j2ki5")
+region = Rect2(122, 0, 61, 99)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rftl1"]
+atlas = ExtResource("7_j2ki5")
+region = Rect2(183, 0, 61, 99)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdeqs"]
+atlas = ExtResource("7_j2ki5")
+region = Rect2(244, 0, 61, 99)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1bugy"]
 atlas = ExtResource("3_87eo2")
@@ -379,6 +408,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ya451")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrrhg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48mpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rftl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdeqs")
+}],
+"loop": true,
+"name": &"lyra_take_damage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_1bugy")
 }, {
 "duration": 1.0,
@@ -450,8 +499,9 @@ zoom = Vector2(1.2, 1.2)
 script = SubResource("GDScript_6db5m")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=247596597]
-collision_layer = 2
-collision_mask = 4
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("3_lh0r4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1301900408]
 position = Vector2(4, -1)
@@ -461,7 +511,7 @@ debug_color = Color(0.9882204, 0, 0.3027967, 0.41960785)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=726138740]
 position = Vector2(4, 0)
 sprite_frames = SubResource("SpriteFrames_mfp5r")
-animation = &"lyra_basic_attack"
+animation = &"lyra_take_damage"
 
 [node name="AbilityManager" type="Node2D" parent="." unique_id=2147113723]
 script = ExtResource("5_73p6n")
@@ -475,3 +525,5 @@ position = Vector2(58, -1)
 shape = SubResource("CapsuleShape2D_73p6n")
 disabled = true
 debug_color = Color(0.9999997, 0.968882, 0.3187083, 0.41960785)
+
+[connection signal="area_entered" from="Hurtbox" to="HealthManager" method="_on_hurtbox_area_entered"]

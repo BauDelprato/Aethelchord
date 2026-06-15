@@ -41,15 +41,9 @@ debug_color = Color(0.9843137, 0.54901963, 0, 0.41960785)
 [node name="AttackManager" type="Node2D" parent="." unique_id=1007635317]
 script = ExtResource("4_ts772")
 
-[node name="Timer" type="Timer" parent="AttackManager" unique_id=874511535]
-
 [node name="Attackbox" type="Area2D" parent="." unique_id=398705767]
-collision_layer = 32
-collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attackbox" unique_id=943518610]
 position = Vector2(35, 110)
 shape = SubResource("RectangleShape2D_ryjyg")
 disabled = true
-
-[connection signal="timeout" from="AttackManager/Timer" to="AttackManager" method="_on_timer_timeout"]
