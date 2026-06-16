@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://cu7fxdnribh0p"]
+
+[ext_resource type="Script" uid="uid://bd2fe68qfknk7" path="res://miniJuego/scripts/Game.gd" id="1_3mu4x"]
+[ext_resource type="Texture2D" uid="uid://beg1xl5urxq5k" path="res://miniJuego/Sprites/game/road/road.png" id="2_6i8ul"]
+[ext_resource type="PackedScene" path="res://miniJuego/Scenes/ArrowButton.tscn" id="3_hotyn"]
+[ext_resource type="Texture2D" uid="uid://c8kkv26ityjfa" path="res://miniJuego/Sprites/game/arrow_button/up/arrow_button_up1.png" id="4_pvnv6"]
+[ext_resource type="Texture2D" uid="uid://1c1orwj1dx33" path="res://miniJuego/Sprites/game/arrow_button/up/arrow_button_up2.png" id="5_01txg"]
+[ext_resource type="Script" uid="uid://b0d6bfayawcc7" path="res://miniJuego/scripts/ArrowButton.gd" id="5_7lmvy"]
+[ext_resource type="Texture2D" uid="uid://obwbuhxm573f" path="res://miniJuego/Sprites/game/arrow_button/left/arrow_button_left1.png" id="7_01txg"]
+[ext_resource type="Texture2D" uid="uid://bqlv0017sekoo" path="res://miniJuego/Sprites/game/arrow_button/left/arrow_button_left2.png" id="8_8axnm"]
+[ext_resource type="PackedScene" path="res://miniJuego/Scenes/Conductor.tscn" id="8_hu0bs"]
+[ext_resource type="Script" uid="uid://cie3jqvwgkeyt" path="res://miniJuego/scripts/Conductor.gd" id="9_inrj0"]
+[ext_resource type="Texture2D" uid="uid://chi8agpw4b5vj" path="res://miniJuego/Sprites/game/arrow_button/right/arrow_button_right1.png" id="9_kae7e"]
+[ext_resource type="Texture2D" uid="uid://ciug2mn4jlrd2" path="res://miniJuego/Sprites/game/arrow_button/right/arrow_button_right2.png" id="10_oirqg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kae7e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_pvnv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_01txg")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6vfxv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_01txg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8axnm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s7m5m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_kae7e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_oirqg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Game" type="Node2D" unique_id=2089014873]
+script = ExtResource("1_3mu4x")
+
+[node name="road" type="Sprite2D" parent="." unique_id=640085939]
+position = Vector2(100, 0)
+texture = ExtResource("2_6i8ul")
+centered = false
+
+[node name="ArrowUp" parent="." unique_id=1859550959 instance=ExtResource("3_hotyn")]
+position = Vector2(160, 164)
+sprite_frames = SubResource("SpriteFrames_kae7e")
+script = ExtResource("5_7lmvy")
+
+[node name="ArrowLeft" parent="." unique_id=332127242 instance=ExtResource("3_hotyn")]
+position = Vector2(120, 164)
+sprite_frames = SubResource("SpriteFrames_6vfxv")
+script = ExtResource("5_7lmvy")
+
+[node name="ArrowButton" parent="." unique_id=431712553 instance=ExtResource("3_hotyn")]
+position = Vector2(200, 164)
+sprite_frames = SubResource("SpriteFrames_s7m5m")
+script = ExtResource("5_7lmvy")
+
+[node name="Label" type="Label" parent="." unique_id=1515459490]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 44.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(0.964706, 0.839216, 0.741176, 1)
+text = "0"
+
+[node name="Combo" type="Label" parent="." unique_id=1745876285]
+offset_left = 4.0
+offset_top = 20.0
+offset_right = 96.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(0.964706, 0.839216, 0.741176, 1)
+horizontal_alignment = 1
+
+[node name="Conductor" parent="." unique_id=1657258738 instance=ExtResource("8_hu0bs")]
+volume_db = -15.0
+script = ExtResource("9_inrj0")
+
+[connection signal="beat" from="Conductor" to="." method="_on_conductor_beat"]
+[connection signal="measure" from="Conductor" to="." method="_on_conductor_measure"]

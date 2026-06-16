@@ -65,6 +65,21 @@ theme_override_fonts/font = ExtResource("4_aofsy")
 theme_override_font_sizes/font_size = 38
 text = "Salir del juego"
 
+[node name="minijuego" type="Button" parent="Button_manager" unique_id=136404213]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 512.0
+offset_right = 701.0
+offset_bottom = 559.0
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_aofsy")
+theme_override_font_sizes/font_size = 38
+text = "Mini juego
+"
+
 [connection signal="pressed" from="Button_manager/Empezar" to="." method="_on_empezar_pressed"]
 [connection signal="pressed" from="Button_manager/Opciones" to="." method="_on_opciones_pressed"]
 [connection signal="pressed" from="Button_manager/Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="Button_manager/minijuego" to="." method="_on_minijuego_pressed"]
+[connection signal="pressed" from="Button_manager/minijuego" to="." method="_on_salir_pressed"]
