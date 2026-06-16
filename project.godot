@@ -18,6 +18,10 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 
 Global="*uid://chmk116pe1d33"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [input]
 
 left={
