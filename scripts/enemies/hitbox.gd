@@ -1,6 +1,6 @@
 extends Area2D
 
-var health = 100
+var health = 10
 var amount = 1
 
 func _ready():

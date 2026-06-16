@@ -59,7 +59,6 @@ func _physics_process(delta):
 
 	# Actualizar animación
 	update_animation(direction)
-
 	move_and_slide()
 
 
@@ -76,13 +75,9 @@ func update_animation(direction):
 			if animation.animation == "lyra_basic_attack+walk":
 				var frame = animation.frame
 				animation.play("lyra_basic_attack")
-				animation.frame = frame
+				animation.frame = frame 
 		return
 	
-	# Animaciones de ataque
-	if is_attacking:
-		return 
-
 	# Animaciones de salto
 	if not is_on_floor():
 		if direction != 0:
