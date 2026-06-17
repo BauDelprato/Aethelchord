@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://demveqderbu0l"]
 
-[ext_resource type="Script" uid="uid://bn5rbdpmsjo3j" path="res://scripts/options_screen.gd" id="1_4yyu5"]
+[ext_resource type="Script" uid="uid://bn5rbdpmsjo3j" path="res://scripts/menus/options_screen.gd" id="1_4yyu5"]
 [ext_resource type="Texture2D" uid="uid://myayjb3bhog7" path="res://assets/backgrounds/titleScreenBackground.png" id="2_xoeai"]
 [ext_resource type="FontFile" uid="uid://dgws5s3ja0e0g" path="res://assets/fonts/blacher.regular.otf" id="3_pyg6m"]
 

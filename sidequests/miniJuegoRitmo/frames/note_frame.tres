@@ -1,0 +1,22 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://c68qh5c652i25"]
+
+[ext_resource type="Texture2D" uid="uid://b1kplnfi2lhq7" path="res://assets/sprites/miniJuegoRitmo/game/arrow_button/left/arrow_button_left3.png" id="1_koef6"]
+[ext_resource type="Texture2D" uid="uid://cmxja4m6l4vey" path="res://assets/sprites/miniJuegoRitmo/game/arrow_button/up/arrow_button_up3.png" id="2_20wet"]
+[ext_resource type="Texture2D" uid="uid://bo7t5vuyuaxg0" path="res://assets/sprites/miniJuegoRitmo/game/arrow_button/right/arrow_button_right3.png" id="3_n2ral"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_koef6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_20wet")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_n2ral")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

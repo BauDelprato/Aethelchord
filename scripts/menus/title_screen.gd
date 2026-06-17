@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_empezar_pressed() -> void:
-	get_tree().change_scene_to_file("res://Escena_Inicial.tscn") # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/levels/Escena_Inicial.tscn") # Replace with function body.
 
 
 func _on_opciones_pressed() -> void: 
@@ -21,3 +21,7 @@ func _on_opciones_pressed() -> void:
 
 func _on_salir_pressed() -> void:
 	get_tree().quit() # Replace with function body.
+
+
+func _on_mini_juego_pressed() -> void:
+	get_tree().change_scene_to_file("res://sidequests/miniJuegoRitmo/scenes/Game.tscn") # Replace with function body.
