@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ocpt12ianfla"
-path="res://.godot/imported/Sprite-0001-contorno-negro.png-a588e01a35daf9d084fb9174fdcf7169.ctex"
+uid="uid://bqw3ol3gtt23c"
+path="res://.godot/imported/opciones.webp-b509e3bd3513e998e18e3ed49f03b39b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/Sprite-0001-contorno-negro.png"
-dest_files=["res://.godot/imported/Sprite-0001-contorno-negro.png-a588e01a35daf9d084fb9174fdcf7169.ctex"]
+source_file="res://assets/sprites/titleScreen/opciones.webp"
+dest_files=["res://.godot/imported/opciones.webp-b509e3bd3513e998e18e3ed49f03b39b.ctex"]
 
 [params]
 

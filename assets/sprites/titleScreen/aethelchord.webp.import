@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ocpt12ianfla"
-path="res://.godot/imported/Sprite-0001-contorno-negro.png-a588e01a35daf9d084fb9174fdcf7169.ctex"
+uid="uid://ci33y8pp6l84e"
+path="res://.godot/imported/aethelchord.webp-bf80a194904f3a633b678c9543f8e42f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/Sprite-0001-contorno-negro.png"
-dest_files=["res://.godot/imported/Sprite-0001-contorno-negro.png-a588e01a35daf9d084fb9174fdcf7169.ctex"]
+source_file="res://assets/sprites/titleScreen/aethelchord.webp"
+dest_files=["res://.godot/imported/aethelchord.webp-bf80a194904f3a633b678c9543f8e42f.ctex"]
 
 [params]
 

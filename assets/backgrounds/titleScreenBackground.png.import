@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ocpt12ianfla"
-path="res://.godot/imported/Sprite-0001-contorno-negro.png-a588e01a35daf9d084fb9174fdcf7169.ctex"
+uid="uid://myayjb3bhog7"
+path="res://.godot/imported/titleScreenBackground.png-91a97afc9996bb328ae159ffdf38d6a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/Sprite-0001-contorno-negro.png"
-dest_files=["res://.godot/imported/Sprite-0001-contorno-negro.png-a588e01a35daf9d084fb9174fdcf7169.ctex"]
+source_file="res://assets/backgrounds/titleScreenBackground.png"
+dest_files=["res://.godot/imported/titleScreenBackground.png-91a97afc9996bb328ae159ffdf38d6a4.ctex"]
 
 [params]
 
