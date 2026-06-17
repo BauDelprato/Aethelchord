@@ -1,9 +1,0 @@
-[gd_resource type="FontFile" format=2]
-
-[ext_resource type="FontFile" uid="uid://bw6fae842u1hw" path="res://miniJuego/Fonts/manaspc.ttf" id="1"]
-
-[resource]
-size = 12
-outline_color = Color( 0.764706, 0.639216, 0.541176, 1 )
-font_data = ExtResource( 1 )
-

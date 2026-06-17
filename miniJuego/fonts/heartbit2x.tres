@@ -1,7 +1,0 @@
-[gd_resource type="FontFile" format=2]
-
-[ext_resource type="FontFile" uid="uid://domcq5ko2bltg" path="res://miniJuego/Fonts/HeartbitXX2Px.ttf" id="1"]
-
-[resource]
-font_data = ExtResource( 1 )
-
