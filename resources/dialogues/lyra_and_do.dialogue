@@ -1,0 +1,25 @@
+~ start
+Lyra:[speed=0.55]Disculpe, he llegado desde Tierras del Eco para saber qué ha pasado con [wave]la melodía[/wave] que siempre llegaba a nuestro pueblo.[wait=0.2] Usted sabe algo señor?
+
+???:[speed=0.45]…Hmmm...[speed=0.65][wait=0.2] Cual es tu nombre, joven aventurera?
+
+Lyra:[speed=0.55]Mi nombre es Lyra, cuál es el suyo?
+
+???:[speed=0.65]Así que Lyra... (ignora la pregunta)
+???:Bienvenida a Cavatina, Lyra. Este es el pueblo mas hermoso de todas las Tierras del Eco.
+???:... O al menos así lo era, antes del Gran Cisma.
+
+Lyra:[speed=0.75] (Parece que el hombre espera una respuesta)
+- Vengo a ayudar y descubrir qué causó el Gran Cisma
+???:... (reflexiona por unos segundos)[wait=0.3] Tu intención parece verdadera pequeña Lyra
+???:Pero antes de abrirte el paso, debo saber una cosa.
+???:Cuando el Gran Cisma ocurrió, muchos huyeron. Otros buscaron poder para sí mismos. Algunos incluso intentaron aprovecharse del caos.
+???:Pero tú has recorrido medio continente siguiendo una melodía que ya ni siquiera puedes escuchar.
+???:Dime, Lyra... ¿por qué?
+Lyra:
+- Porque el pueblo está sufriendo.
+- Porque quiero conocer la verdad.
+- Porque alguien tenía que hacerlo.
+???:Hm... Las palabras son fáciles. Los actos no tanto.
+???:Pongamos a prueba tu valía pequeña Lyra! Intenta golpearme.
+=> END
