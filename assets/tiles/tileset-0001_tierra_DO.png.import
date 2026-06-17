@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cut3wpalcp88j"
-path="res://.godot/imported/Fondo_Claro_Gris.png-25453de079cc97f85b789b1e9b339166.ctex"
+uid="uid://yy8xjnchr1bx"
+path="res://.godot/imported/tileset-0001_tierra_DO.png-d555c8057fd9c5a940031fc77137c076.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Backgrounds/Fondo_Claro_Gris.png"
-dest_files=["res://.godot/imported/Fondo_Claro_Gris.png-25453de079cc97f85b789b1e9b339166.ctex"]
+source_file="res://assets/tiles/tileset-0001_tierra_DO.png"
+dest_files=["res://.godot/imported/tileset-0001_tierra_DO.png-d555c8057fd9c5a940031fc77137c076.ctex"]
 
 [params]
 
