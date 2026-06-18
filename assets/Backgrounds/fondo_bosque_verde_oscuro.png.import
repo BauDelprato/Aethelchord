@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://y56cnj2mikc8"
-path="res://.godot/imported/fondo_bosque_verde_oscuro.png-a0c3d8fa3dffe5b30084f29675e62719.ctex"
+path="res://.godot/imported/fondo_bosque_verde_oscuro.png-0278251245d0a760a881cecc012af78e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/fondo_bosque_verde_oscuro.png"
-dest_files=["res://.godot/imported/fondo_bosque_verde_oscuro.png-a0c3d8fa3dffe5b30084f29675e62719.ctex"]
+source_file="res://assets/Backgrounds/fondo_bosque_verde_oscuro.png"
+dest_files=["res://.godot/imported/fondo_bosque_verde_oscuro.png-0278251245d0a760a881cecc012af78e.ctex"]
 
 [params]
 

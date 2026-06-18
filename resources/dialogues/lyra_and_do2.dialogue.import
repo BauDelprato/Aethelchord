@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://ct2xkj3is12m7"
+path="res://.godot/imported/lyra_and_do2.dialogue-ccb97ac3487a4a787bb3d77150259318.tres"
+
+[deps]
+
+source_file="res://resources/dialogues/lyra_and_do2.dialogue"
+dest_files=["res://.godot/imported/lyra_and_do2.dialogue-ccb97ac3487a4a787bb3d77150259318.tres"]
+
+[params]
+
+defaults=true

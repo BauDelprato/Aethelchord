@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dvtotmvxqbjd2" path="res://scripts/NPCs/do/do.gd" id="1_m8lw7"]
 [ext_resource type="Texture2D" uid="uid://cp7e6kiittauy" path="res://assets/sprites/do/do walk.png" id="2_m8lw7"]
 [ext_resource type="Texture2D" uid="uid://bkbogkudlg6ov" path="res://assets/sprites/do/do attack idle.png" id="3_yf245"]
+[ext_resource type="Texture2D" uid="uid://by7lx8n2i0xta" path="res://assets/sprites/do/do damage.png" id="4_jou8e"]
 [ext_resource type="Script" uid="uid://cvwtw5eaps0iw" path="res://scripts/NPCs/do/hitbox.gd" id="4_phssb"]
 [ext_resource type="Texture2D" uid="uid://e3achm3x1pfc" path="res://assets/sprites/do/do attack walk.png" id="5_jou8e"]
 [ext_resource type="Script" uid="uid://b6imd7gbi6naw" path="res://scripts/NPCs/do/attackbox.gd" id="7_gdbt6"]
@@ -43,6 +44,22 @@ region = Rect2(900, 0, 300, 150)
 [sub_resource type="AtlasTexture" id="AtlasTexture_3wjbd"]
 atlas = ExtResource("3_yf245")
 region = Rect2(1200, 0, 300, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdbt6"]
+atlas = ExtResource("4_jou8e")
+region = Rect2(0, 0, 100, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqst0"]
+atlas = ExtResource("4_jou8e")
+region = Rect2(100, 0, 100, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vnv8"]
+atlas = ExtResource("4_jou8e")
+region = Rect2(200, 0, 100, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40yt0"]
+atlas = ExtResource("4_jou8e")
+region = Rect2(300, 0, 100, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fg5fx"]
 atlas = ExtResource("2_m8lw7")
@@ -120,6 +137,23 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_gdbt6")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_tqst0")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_1vnv8")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_40yt0")
+}],
+"loop": false,
+"name": &"do_take_damage",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fg5fx")
 }, {
@@ -173,7 +207,7 @@ script = ExtResource("1_m8lw7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1425278395]
 sprite_frames = SubResource("SpriteFrames_8w3o6")
-animation = &"do_idle"
+animation = &"do_take_damage"
 
 [node name="TextArea" type="Area2D" parent="." unique_id=2137094784]
 collision_layer = 0

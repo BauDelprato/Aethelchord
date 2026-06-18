@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://myayjb3bhog7"
-path="res://.godot/imported/titleScreenBackground.png-ac4877c40d6bb00b9c48781a368effe2.ctex"
+uid="uid://cuas334n5er72"
+path="res://.godot/imported/Tiles.png-348be4317ec6be4069920270f7b509de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Backgrounds/titleScreenBackground.png"
-dest_files=["res://.godot/imported/titleScreenBackground.png-ac4877c40d6bb00b9c48781a368effe2.ctex"]
+source_file="res://assets/tiles/finaltiles/Tiles.png"
+dest_files=["res://.godot/imported/Tiles.png-348be4317ec6be4069920270f7b509de.ctex"]
 
 [params]
 
