@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cut3wpalcp88j"
-path="res://.godot/imported/Fondo_Claro_Gris.png-25453de079cc97f85b789b1e9b339166.ctex"
+uid="uid://bt3xfeujso6it"
+path="res://.godot/imported/Fondo_Claro_Gris.png-b16e1f8afc9edbaeb64eb02aa4d14dcc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Backgrounds/Fondo_Claro_Gris.png"
-dest_files=["res://.godot/imported/Fondo_Claro_Gris.png-25453de079cc97f85b789b1e9b339166.ctex"]
+source_file="res://assets/backgrounds/Fondo_Claro_Gris.png"
+dest_files=["res://.godot/imported/Fondo_Claro_Gris.png-b16e1f8afc9edbaeb64eb02aa4d14dcc.ctex"]
 
 [params]
 
