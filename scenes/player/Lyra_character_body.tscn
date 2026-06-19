@@ -493,7 +493,10 @@ texture = ExtResource("2_lxlh8")
 hframes = 7
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1390850156]
+offset = Vector2(0, -130)
 zoom = Vector2(1.2, 1.2)
+limit_left = 0
+limit_right = 7500
 
 [node name="HealthManager" type="Node2D" parent="." unique_id=20784656]
 script = SubResource("GDScript_6db5m")

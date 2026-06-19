@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pevkibv8ahwj"
-path="res://.godot/imported/tileset_oscuro_32x32.png-a569c12b3854d9ff7c2f631fc187bcd7.ctex"
+uid="uid://cpwanmmasevcs"
+path="res://.godot/imported/Fondo_escena1_02-contorno-negro_XL.png-48998c7784610762bc2b4ad7280bce30.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/tileset_oscuro_32x32.png"
-dest_files=["res://.godot/imported/tileset_oscuro_32x32.png-a569c12b3854d9ff7c2f631fc187bcd7.ctex"]
+source_file="res://assets/Fondo_escena1_02-contorno-negro_XL.png"
+dest_files=["res://.godot/imported/Fondo_escena1_02-contorno-negro_XL.png-48998c7784610762bc2b4ad7280bce30.ctex"]
 
 [params]
 
