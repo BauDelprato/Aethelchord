@@ -8,7 +8,7 @@ var beats_anticipacion = 4.0
 
 # Tracking the beat and song position
 var song_position = 0.0
-var song_position_in_beats = 1
+var song_position_in_beats = 0
 var sec_per_beat = 60.0 / bpm
 var last_reported_beat = 0
 var beats_before_start = 0
@@ -26,6 +26,12 @@ signal spawn_note(target_beat)
 func _ready():
 	sec_per_beat = 60.0 / bpm
 	cargar_notas_desde_json("res://sidequests/miniJuegoRitmo/mapa1.json")
+	#FORZAR LA CARGA DEL AUDIO 
+	volume_db = -80.0 
+	play()            
+	stop()            
+	volume_db = 0.0   
+	play_with_beat_offset(beats_anticipacion)
 
 func cargar_notas_desde_json(ruta: String):
 	var file = FileAccess.open(ruta, FileAccess.READ)
@@ -41,7 +47,6 @@ func cargar_notas_desde_json(ruta: String):
 	
 	notas_cancion.clear()
 	
-	# Buscamos la pista que tenga las notas (Reaper suele guardar la data de tempo en la pista 0 y los eventos en la 1)
 	for track in json_data["tracks"]:
 		if track["notes"].size() > 0:
 			for nota in track["notes"]:

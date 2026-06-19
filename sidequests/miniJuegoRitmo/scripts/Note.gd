@@ -44,7 +44,6 @@ func initialize(lane):
 
 
 func destroy(score):
-	$CPUParticles2D.emitting = true
 	$AnimatedSprite2D.visible = false
 	$Timer.start()
 	hit = true

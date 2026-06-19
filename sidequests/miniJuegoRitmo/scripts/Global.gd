@@ -9,6 +9,8 @@ var okay = 0
 var missed = 0
 var grade = "NA"
 
+var minijuego_ganado = false
+
 
 func set_score(new):
 	score = new

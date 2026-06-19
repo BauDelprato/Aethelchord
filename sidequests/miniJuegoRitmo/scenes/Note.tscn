@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dbjrdp020lmlj" path="res://sidequests/miniJuegoRitmo/scripts/Note.gd" id="1_0qt8c"]
 [ext_resource type="SpriteFrames" uid="uid://c68qh5c652i25" path="res://sidequests/miniJuegoRitmo/frames/note_frame.tres" id="2_x42oe"]
-[ext_resource type="Texture2D" uid="uid://cevc66xycq4xk" path="res://assets/sprites/miniJuegoRitmo/game/particles/star.png" id="5_hqix7"]
 [ext_resource type="FontFile" uid="uid://dtt1gewc7b2t7" path="res://assets/fonts/HeartbitXX2Px.ttf" id="6_aun2y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bpswk"]
@@ -15,18 +14,6 @@ sprite_frames = ExtResource("2_x42oe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=764611264]
 shape = SubResource("RectangleShape2D_bpswk")
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1082145651]
-emitting = false
-amount = 16
-texture = ExtResource("5_hqix7")
-lifetime = 0.3
-one_shot = true
-explosiveness = 0.8
-emission_shape = 1
-emission_sphere_radius = 1.0
-spread = 180.0
-gravity = Vector2(0, 0)
 
 [node name="Timer" type="Timer" parent="." unique_id=1379951585]
 wait_time = 0.3

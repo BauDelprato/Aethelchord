@@ -10,6 +10,8 @@ var okay = 0
 var missed = 0
 
 var note = load("res://sidequests/miniJuegoRitmo/scenes/Note.tscn")
+var ultimo_beat_registrado = -1.0
+var canales_disponibles = []
 
 func _ready():
 	randomize()
@@ -28,25 +30,46 @@ func _input(event):
 
 
 func _on_Conductor_spawn_note(_target_beat):
-	_spawn_notes()
+	_spawn_notes(_target_beat)
 
 
-func _spawn_notes():
-	var lane = randi() % 3 
+func _spawn_notes(_target_beat):
+	if _target_beat != ultimo_beat_registrado:
+		ultimo_beat_registrado = _target_beat
+		canales_disponibles = [0, 1, 2] 
+		canales_disponibles.shuffle() 
+	
+	if canales_disponibles.is_empty():
+		return
+	var lane = canales_disponibles.pop_back() #con esto los carriles no se repiten
 	var instance = note.instantiate()
 	instance.initialize(lane)
 	add_child(instance)
 
 
 func _on_Conductor_finished():
-	Global.set_score(score)
+	var total_notas = $Conductor.notas_cancion.size()
+	var max_score_posible = 3 * (total_notas * (total_notas + 1)) / 2
+	
+	var porcentaje = (float(score) / max_score_posible) * 100.0
+	
+	print("Puntaje obtenido: ", score, " / ", max_score_posible)
+	print("Porcentaje de precisión: ", porcentaje, "%")
+	
+	if porcentaje >= 10.0:
+		Global.minijuego_ganado = true
+	else:
+		Global.minijuego_ganado = false
+		
+	Global.set_score(score) 
 	Global.combo = max_combo
 	Global.great = great
 	Global.good = good
 	Global.okay = okay
 	Global.missed = missed
-	if get_tree().change_scene_to_file("res://scenes/menus/titleScreen.tscn") != OK:
-		print ("Error changing scene to End")
+	
+	if get_tree().change_scene_to_file("res://sidequests/miniJuegoRitmo/scenes/Resultado.tscn") != OK:
+		print ("Error changing scene to Resultado")
 
 
 func increment_score(by):

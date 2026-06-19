@@ -19,10 +19,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t852t"]
+size = Vector2(5, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gp1wu"]
+size = Vector2(8, 6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jiabw"]
+size = Vector2(8, 22)
 
 [node name="ArrowButton" type="AnimatedSprite2D" unique_id=589621063]
 sprite_frames = SubResource("SpriteFrames_45obj")
