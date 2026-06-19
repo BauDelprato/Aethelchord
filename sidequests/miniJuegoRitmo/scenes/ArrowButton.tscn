@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bf0kk4thwp6co"]
+
+[ext_resource type="Texture2D" uid="uid://d1r04h0wciweo" path="res://assets/sprites/miniJuegoRitmo/game/arrow_button/up/arrow_button_up1.png" id="1_24rua"]
+[ext_resource type="Texture2D" uid="uid://ceckyfy0eeqf2" path="res://assets/sprites/miniJuegoRitmo/game/arrow_button/up/arrow_button_up2.png" id="2_kyrxo"]
+[ext_resource type="Script" uid="uid://1d4v7wnkt8hw" path="res://sidequests/miniJuegoRitmo/scripts/ArrowButton.gd" id="3_apn4u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_45obj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_24rua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kyrxo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t852t"]
+size = Vector2(5, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gp1wu"]
+size = Vector2(8, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jiabw"]
+size = Vector2(8, 22)
+
+[node name="ArrowButton" type="AnimatedSprite2D" unique_id=589621063]
+sprite_frames = SubResource("SpriteFrames_45obj")
+script = ExtResource("3_apn4u")
+
+[node name="perfectArea" type="Area2D" parent="." unique_id=1154593605]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="perfectArea" unique_id=1155796915]
+shape = SubResource("RectangleShape2D_t852t")
+
+[node name="goodArea" type="Area2D" parent="." unique_id=1693142847]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goodArea" unique_id=1755587370]
+shape = SubResource("RectangleShape2D_gp1wu")
+
+[node name="okayArea" type="Area2D" parent="." unique_id=807777223]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="okayArea" unique_id=43140761]
+shape = SubResource("RectangleShape2D_jiabw")
+
+[node name="PushTimer" type="Timer" parent="." unique_id=1961619576]
+wait_time = 0.05
+one_shot = true
+
+[connection signal="area_entered" from="perfectArea" to="." method="_on_PerfectArea_area_entered"]
+[connection signal="area_exited" from="perfectArea" to="." method="_on_PerfectArea_area_exited"]
+[connection signal="area_entered" from="goodArea" to="." method="_on_GoodArea_area_entered"]
+[connection signal="area_exited" from="goodArea" to="." method="_on_GoodArea_area_exited"]
+[connection signal="area_entered" from="okayArea" to="." method="_on_OkayArea_area_entered"]
+[connection signal="area_exited" from="okayArea" to="." method="_on_OkayArea_area_exited"]
+[connection signal="timeout" from="PushTimer" to="." method="_on_PushTimer_timeout"]

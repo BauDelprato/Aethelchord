@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cluh4m0f5luai"]
 
-[ext_resource type="Script" uid="uid://23q3cdgrwuyc" path="res://scripts/title_screen.gd" id="1_7vamw"]
+[ext_resource type="Script" uid="uid://23q3cdgrwuyc" path="res://scripts/menus/title_screen.gd" id="1_7vamw"]
 [ext_resource type="Texture2D" uid="uid://myayjb3bhog7" path="res://assets/backgrounds/titleScreenBackground.png" id="1_y8l25"]
 [ext_resource type="Texture2D" uid="uid://ci33y8pp6l84e" path="res://assets/sprites/titleScreen/aethelchord.webp" id="3_x612o"]
 [ext_resource type="FontFile" uid="uid://dgws5s3ja0e0g" path="res://assets/fonts/blacher.regular.otf" id="4_aofsy"]
@@ -65,6 +65,19 @@ theme_override_fonts/font = ExtResource("4_aofsy")
 theme_override_font_sizes/font_size = 38
 text = "Salir del juego"
 
+[node name="MiniJuego" type="Button" parent="Button_manager" unique_id=1451615856]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 520.0
+offset_right = 668.0
+offset_bottom = 567.0
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_aofsy")
+theme_override_font_sizes/font_size = 24
+text = "Mini juego"
+
 [connection signal="pressed" from="Button_manager/Empezar" to="." method="_on_empezar_pressed"]
 [connection signal="pressed" from="Button_manager/Opciones" to="." method="_on_opciones_pressed"]
 [connection signal="pressed" from="Button_manager/Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="Button_manager/MiniJuego" to="." method="_on_mini_juego_pressed"]

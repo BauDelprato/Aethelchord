@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dutf7yiusy46v"]
+
+[ext_resource type="Script" uid="uid://dbjrdp020lmlj" path="res://sidequests/miniJuegoRitmo/scripts/Note.gd" id="1_0qt8c"]
+[ext_resource type="SpriteFrames" uid="uid://c68qh5c652i25" path="res://sidequests/miniJuegoRitmo/frames/note_frame.tres" id="2_x42oe"]
+[ext_resource type="FontFile" uid="uid://dtt1gewc7b2t7" path="res://assets/fonts/HeartbitXX2Px.ttf" id="6_aun2y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpswk"]
+
+[node name="Note" type="Area2D" unique_id=712289985 groups=["note"]]
+script = ExtResource("1_0qt8c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2033641674]
+sprite_frames = ExtResource("2_x42oe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=764611264]
+shape = SubResource("RectangleShape2D_bpswk")
+
+[node name="Timer" type="Timer" parent="." unique_id=1379951585]
+wait_time = 0.3
+one_shot = true
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1173226935]
+
+[node name="Label" type="Label" parent="Node2D" unique_id=1158200910]
+anchors_preset = -1
+anchor_right = 0.047
+offset_left = -20.0
+offset_top = -8.0
+offset_right = 20.0
+offset_bottom = 15.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_aun2y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
