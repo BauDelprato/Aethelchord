@@ -13,7 +13,6 @@ config_version=5
 config/name="Aethelchord"
 run/main_scene="uid://cluh4m0f5luai"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
 
 [autoload]
 

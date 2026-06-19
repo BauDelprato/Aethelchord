@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://bw0gt1hu341gq"]
 
-[ext_resource type="Script" uid="uid://btuhqpcsit1n8" path="res://resources/dialogues/balloon.gd" id="1_36de5"]
+[ext_resource type="Script" uid="uid://c21k5npyp221x" path="res://resources/dialogues/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
+[ext_resource type="Texture2D" uid="uid://4n4s523pgixl" path="res://assets/dialogues/medievalrect.png" id="2_fbax3"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="FontFile" uid="uid://dpk41f2ra8a5m" path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" id="3_361en"]
+[ext_resource type="Texture2D" uid="uid://bv1xmhj6di6p6" path="res://assets/dialogues/medievaltinyrect.png" id="6_361en"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -120,16 +123,23 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -219.0
+offset_bottom = 11.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="PanelContainer" type="PanelContainer" parent="Balloon/MarginContainer" unique_id=810051587]
+[node name="PanelContainer" type="NinePatchRect" parent="Balloon/MarginContainer" unique_id=1590479323]
 clip_children = 2
+texture_filter = 1
 layout_mode = 2
 mouse_filter = 1
+texture = ExtResource("2_fbax3")
 
 [node name="MarginContainer" type="MarginContainer" parent="Balloon/MarginContainer/PanelContainer" unique_id=1030936092]
-layout_mode = 2
+layout_mode = 0
+offset_left = 26.0
+offset_top = 12.0
+offset_right = 1112.0
+offset_bottom = 195.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Balloon/MarginContainer/PanelContainer/MarginContainer" unique_id=1428277592]
 layout_mode = 2
@@ -143,6 +153,7 @@ unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
 mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("3_361en")
 bbcode_enabled = true
 text = "Character"
 fit_content = true
@@ -152,6 +163,7 @@ scroll_active = false
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("3_361en")
 text = "Dialogue..."
 
 [node name="Control" type="Control" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1162966119]
@@ -175,10 +187,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -290.5
-offset_top = -35.0
-offset_right = 290.5
-offset_bottom = 35.0
+offset_left = -477.0
+offset_top = 194.0
+offset_right = 129.0
+offset_bottom = 264.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 8
@@ -189,7 +201,11 @@ response_template = NodePath("ResponseExample")
 
 [node name="ResponseExample" type="Button" parent="Balloon/ResponsesMenu" unique_id=914537232]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_361en")
 text = "Response example"
+icon = ExtResource("6_361en")
+flat = true
+icon_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1116280512]
 unique_name_in_owner = true

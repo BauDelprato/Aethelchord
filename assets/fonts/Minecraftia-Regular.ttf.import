@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://brbxbtekfuubh"
-path="res://.godot/imported/manaspc.ttf-295c23e3093e1319e303be44f47e66ba.fontdata"
+uid="uid://blduhgcg2vyb3"
+path="res://.godot/imported/Minecraftia-Regular.ttf-0514a1b9dec5a289b631efb56490ae6f.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/manaspc.ttf"
-dest_files=["res://.godot/imported/manaspc.ttf-295c23e3093e1319e303be44f47e66ba.fontdata"]
+source_file="res://assets/fonts/Minecraftia-Regular.ttf"
+dest_files=["res://.godot/imported/Minecraftia-Regular.ttf-0514a1b9dec5a289b631efb56490ae6f.fontdata"]
 
 [params]
 

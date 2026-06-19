@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3k8whm00h2sr"
-path="res://.godot/imported/fantasy-ui-borders.svg-3c6e12972935eb7384a0724e02d790c7.ctex"
+uid="uid://4n4s523pgixl"
+path="res://.godot/imported/medievalrect.png-b79ac4fd738882d38ff9af64d485fabc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/borders/kenney_fantasy-ui-borders/Vector/fantasy-ui-borders.svg"
-dest_files=["res://.godot/imported/fantasy-ui-borders.svg-3c6e12972935eb7384a0724e02d790c7.ctex"]
+source_file="res://assets/dialogues/medievalrect.png"
+dest_files=["res://.godot/imported/medievalrect.png-b79ac4fd738882d38ff9af64d485fabc.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
