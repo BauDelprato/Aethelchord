@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cut3wpalcp88j"
-path="res://.godot/imported/Fondo_Claro_Gris.png-25453de079cc97f85b789b1e9b339166.ctex"
+uid="uid://dwutjbx7xdc8q"
+path="res://.godot/imported/Fondo_escena1_01-bosque-verde-oscuro_XXL.png-611083261bdf0dc70cb8b27ec458d3a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Backgrounds/Fondo_Claro_Gris.png"
-dest_files=["res://.godot/imported/Fondo_Claro_Gris.png-25453de079cc97f85b789b1e9b339166.ctex"]
+source_file="res://assets/Fondo_escena1_01-bosque-verde-oscuro_XXL.png"
+dest_files=["res://.godot/imported/Fondo_escena1_01-bosque-verde-oscuro_XXL.png-611083261bdf0dc70cb8b27ec458d3a4.ctex"]
 
 [params]
 

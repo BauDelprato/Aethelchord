@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ocpt12ianfla"
-path="res://.godot/imported/Sprite-0001-contorno-negro.png-a588e01a35daf9d084fb9174fdcf7169.ctex"
+uid="uid://04jia70icllw"
+path="res://.godot/imported/Fondo_escena1_bosque_verde_oscuro_XL.png-3e1aec502220fccee54003c2264df4c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/Sprite-0001-contorno-negro.png"
-dest_files=["res://.godot/imported/Sprite-0001-contorno-negro.png-a588e01a35daf9d084fb9174fdcf7169.ctex"]
+source_file="res://assets/Fondo_escena1_bosque_verde_oscuro_XL.png"
+dest_files=["res://.godot/imported/Fondo_escena1_bosque_verde_oscuro_XL.png-3e1aec502220fccee54003c2264df4c4.ctex"]
 
 [params]
 
