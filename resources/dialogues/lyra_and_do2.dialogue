@@ -1,0 +1,19 @@
+~ start
+???: Vaya! si queres poderosa pequeña Lyra... demostraste un combate excelente HA HA HA!
+Do: Soy Do, soy uno de de los Siete Guardianes de El Septeto.
+Lyra: Entonces... sabes lo que pasó aquí?
+Do: No del todo... Nuestro trabajo como Guardianes era proteger estas tierras, pero pienso que uno de mis hermanos fue el causante de la catástrofe.
+Lyra: Y cómo podemos resolverlo? Este lugar parece no tener arreglo alguno
+Do: Debes buscar la ayuda de mis hermanos Guardianes. Ellos serán la llave para restaurar el orden de las Tierras del Eco.
+Do: Pero debes ser rápida, el Gran Cisma parece estar extendiendose... puede que pronto todo el mundo caiga en el caos total.
+~ speech
+Lyra:
+- ¿Y a dónde se supone que vaya ahora?
+	Do: Mmm... Creo que deberías ir a visitar a mi querida hermana [wave amp=25 freq=5]Mi[/wave]. La ultima vez que la vi, se encontraba en el corazón del Bosque Monocromo.
+	=> speech
+- Me vendría bien tu ayuda antes de irme
+	Do: ... Tienes razón, el viaje que te espera es peligroso. Toma [wave amp=25 freq=5]esto[/wave]
+	=> speech
+- Está bien, adiós Do.
+	Do: Cuídate mucho pequeña Lyra. Algo me dice que nos volveremos a ver muy pronto.
+	=> END

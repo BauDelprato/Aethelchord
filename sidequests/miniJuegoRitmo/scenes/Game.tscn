@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://c4c4jar3mvuct"]
+
+[ext_resource type="Script" uid="uid://bw6bjmh221807" path="res://sidequests/miniJuegoRitmo/scripts/Game.gd" id="1_4gcw4"]
+[ext_resource type="Texture2D" uid="uid://c7lyjnchjuc35" path="res://assets/sprites/miniJuegoRitmo/game/road/road.png" id="2_gogea"]
+[ext_resource type="SpriteFrames" uid="uid://bxmfpvmqxifw5" path="res://sidequests/miniJuegoRitmo/frames/arrow_up_frame.tres" id="3_gogea"]
+[ext_resource type="PackedScene" uid="uid://bf0kk4thwp6co" path="res://sidequests/miniJuegoRitmo/scenes/ArrowButton.tscn" id="5_ipfsg"]
+[ext_resource type="SpriteFrames" uid="uid://bpc7fq8sfrj2p" path="res://sidequests/miniJuegoRitmo/frames/arrow_left_frame.tres" id="5_st7lp"]
+[ext_resource type="SpriteFrames" uid="uid://mqaynql4wdpe" path="res://sidequests/miniJuegoRitmo/frames/arrow_right_frame.tres" id="6_ipfsg"]
+[ext_resource type="FontFile" uid="uid://dtt1gewc7b2t7" path="res://assets/fonts/HeartbitXX2Px.ttf" id="10_h8x5s"]
+[ext_resource type="AudioStream" uid="uid://fkfp34ea7c1u" path="res://sound/eminor.ogg" id="11_r47e2"]
+[ext_resource type="Script" uid="uid://1vby0qxhra3s" path="res://sidequests/miniJuegoRitmo/scripts/Conductor.gd" id="12_ncgh5"]
+
+[node name="Game" type="Node2D" unique_id=314211749]
+script = ExtResource("1_4gcw4")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1362745811]
+offset_right = 328.0
+offset_bottom = 184.0
+color = Color(0.30588236, 0.28627452, 0.37254903, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=728387161]
+position = Vector2(164, 91)
+zoom = Vector2(3.5, 3.5)
+
+[node name="road" type="Sprite2D" parent="." unique_id=28344741]
+position = Vector2(100, 0)
+texture = ExtResource("2_gogea")
+centered = false
+
+[node name="ArrowUp" parent="." unique_id=589621063 instance=ExtResource("5_ipfsg")]
+position = Vector2(160, 164)
+sprite_frames = ExtResource("3_gogea")
+input = "up"
+
+[node name="ArrowLeft" parent="." unique_id=463302785 instance=ExtResource("5_ipfsg")]
+position = Vector2(120, 164)
+sprite_frames = ExtResource("5_st7lp")
+input = "left"
+
+[node name="ArrowRight" parent="." unique_id=1437909465 instance=ExtResource("5_ipfsg")]
+position = Vector2(200, 164)
+sprite_frames = ExtResource("6_ipfsg")
+input = "right"
+
+[node name="Label" type="Label" parent="." unique_id=1605888362]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0.9647059, 0.8392157, 0.7411765, 1)
+theme_override_fonts/font = ExtResource("10_h8x5s")
+text = "0"
+
+[node name="Combo" type="Label" parent="." unique_id=682180684]
+offset_left = 24.0
+offset_top = 56.0
+offset_right = 64.0
+offset_bottom = 79.0
+theme_override_colors/font_color = Color(0.9647059, 0.8392157, 0.7411765, 1)
+theme_override_fonts/font = ExtResource("10_h8x5s")
+
+[node name="Conductor" type="AudioStreamPlayer" parent="." unique_id=1197977747]
+stream = ExtResource("11_r47e2")
+autoplay = true
+script = ExtResource("12_ncgh5")
+
+[node name="StartTimer" type="Timer" parent="Conductor" unique_id=331757640]
+one_shot = true
+
+[connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
+[connection signal="measure" from="Conductor" to="." method="_on_Conductor_measure"]
+[connection signal="timeout" from="Conductor/StartTimer" to="Conductor" method="_on_StartTimer_timeout"]

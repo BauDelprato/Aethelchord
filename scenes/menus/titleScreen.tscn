@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://cluh4m0f5luai"]
+
+[ext_resource type="Script" uid="uid://23q3cdgrwuyc" path="res://scripts/menus/title_screen.gd" id="1_7vamw"]
+[ext_resource type="Texture2D" uid="uid://myayjb3bhog7" path="res://assets/backgrounds/titleScreenBackground.png" id="1_y8l25"]
+[ext_resource type="Texture2D" uid="uid://ci33y8pp6l84e" path="res://assets/sprites/titleScreen/aethelchord.webp" id="3_x612o"]
+[ext_resource type="FontFile" uid="uid://dgws5s3ja0e0g" path="res://assets/fonts/blacher.regular.otf" id="4_aofsy"]
+
+[node name="TitleScreen" type="Control" unique_id=375118961]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_7vamw")
+
+[node name="Background" type="TextureRect" parent="." unique_id=38196441]
+layout_mode = 0
+offset_right = 1149.0
+offset_bottom = 649.0
+texture = ExtResource("1_y8l25")
+
+[node name="Title" type="TextureRect" parent="." unique_id=1224235245]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 128.0
+offset_right = 879.0
+offset_bottom = 247.0
+texture = ExtResource("3_x612o")
+
+[node name="Button_manager" type="Control" parent="." unique_id=1915493385]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Empezar" type="Button" parent="Button_manager" unique_id=2054486887]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 344.0
+offset_right = 647.0
+offset_bottom = 391.0
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_aofsy")
+theme_override_font_sizes/font_size = 38
+text = "Empezar"
+
+[node name="Opciones" type="Button" parent="Button_manager" unique_id=1716912719]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 408.0
+offset_right = 656.0
+offset_bottom = 455.0
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_aofsy")
+theme_override_font_sizes/font_size = 38
+text = "Opciones"
+
+[node name="Salir" type="Button" parent="Button_manager" unique_id=1285751210]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 464.0
+offset_right = 701.0
+offset_bottom = 511.0
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_aofsy")
+theme_override_font_sizes/font_size = 38
+text = "Salir del juego"
+
+[node name="MiniJuego" type="Button" parent="Button_manager" unique_id=1451615856]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 520.0
+offset_right = 668.0
+offset_bottom = 567.0
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_aofsy")
+theme_override_font_sizes/font_size = 24
+text = "Mini juego"
+
+[connection signal="pressed" from="Button_manager/Empezar" to="." method="_on_empezar_pressed"]
+[connection signal="pressed" from="Button_manager/Opciones" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="Button_manager/Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="Button_manager/MiniJuego" to="." method="_on_mini_juego_pressed"]

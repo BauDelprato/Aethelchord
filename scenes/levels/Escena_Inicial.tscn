@@ -1,11 +1,21 @@
 [gd_scene format=4 uid="uid://dtlnxnpjbi3xv"]
 
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://cut3wpalcp88j" path="res://assets/Backgrounds/Fondo_Claro_Gris.png" id="1_h7ex6"]
 [ext_resource type="Texture2D" uid="uid://cnmvjucqnsncb" path="res://assets/Backgrounds/Fondo_escena1_01-bosque-verde-oscuro_XXL.png" id="2_q8aqb"]
 [ext_resource type="PackedScene" uid="uid://dcuvfonru1uq0" path="res://scenes/player/Lyra_character_body.tscn" id="3_gd8k0"]
 [ext_resource type="Texture2D" uid="uid://yy8xjnchr1bx" path="res://assets/tiles/tileset-0001_tierra_DO.png" id="3_v6h1u"]
 [ext_resource type="Texture2D" uid="uid://cex4ups4bsct1" path="res://assets/Backgrounds/Fondo_escena1_01-contorno-negro_XXL.png" id="5_g55s7"]
 [ext_resource type="AudioStream" uid="uid://cwegx2d3bouhv" path="res://assets/music/viento_ambient1.ogg" id="6_v6h1u"]
+=======
+[ext_resource type="Texture2D" uid="uid://bt3xfeujso6it" path="res://assets/backgrounds/Fondo_Claro_Gris.png" id="1_h7ex6"]
+[ext_resource type="Texture2D" uid="uid://y56cnj2mikc8" path="res://assets/backgrounds/fondo_bosque_verde_oscuro.png" id="2_lm0tn"]
+[ext_resource type="PackedScene" uid="uid://dcuvfonru1uq0" path="res://scenes/player/Lyra_character_body.tscn" id="3_gd8k0"]
+[ext_resource type="Texture2D" uid="uid://ocpt12ianfla" path="res://assets/backgrounds/Sprite-0001-contorno-negro.png" id="3_gy0fx"]
+[ext_resource type="Texture2D" uid="uid://cx04p3acwfdyd" path="res://assets/tiles/finaltiles/TX Tileset Ground.png" id="4_v6h1u"]
+[ext_resource type="Texture2D" uid="uid://cuuahk6y8is25" path="res://assets/tiles/tileset_32x32(new).png" id="5_mxkts"]
+[ext_resource type="AudioStream" uid="uid://bixhpjk4urni1" path="res://sound/viento_ambient1.ogg" id="7_g55s7"]
+>>>>>>> 215d81fe2de580e24911f7e2e7c563604a2ce32b
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rrlcs"]
 texture = ExtResource("3_v6h1u")
@@ -285,5 +295,11 @@ texture = ExtResource("5_g55s7")
 centered = false
 offset = Vector2(1, 1)
 
+<<<<<<< HEAD
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=176689138]
 stream = ExtResource("6_v6h1u")
+=======
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1632300746]
+stream = ExtResource("7_g55s7")
+autoplay = true
+>>>>>>> 215d81fe2de580e24911f7e2e7c563604a2ce32b

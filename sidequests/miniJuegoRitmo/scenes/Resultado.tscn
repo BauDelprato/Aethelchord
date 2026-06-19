@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://clh0fc1kjjhw"]
+
+[ext_resource type="Script" uid="uid://n7awhrxqsmav" path="res://sidequests/miniJuegoRitmo/scripts/Resultado.gd" id="1_dg46e"]
+[ext_resource type="FontFile" uid="uid://dtt1gewc7b2t7" path="res://assets/fonts/HeartbitXX2Px.ttf" id="2_65cgq"]
+
+[node name="Resultado" type="Control" unique_id=1735535511]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_right = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dg46e")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1351768687]
+layout_mode = 1
+offset_top = -14.0
+offset_right = 402.0
+offset_bottom = 251.0
+color = Color(0.30588236, 0.28627452, 0.37254903, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1874511591]
+position = Vector2(172, 93)
+zoom = Vector2(3.5, 3.5)
+
+[node name="Label" type="Label" parent="." unique_id=1185648757]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.022569444
+anchor_right = 0.026041666
+offset_left = 118.0
+offset_top = 49.0
+offset_right = 228.0
+offset_bottom = 69.0
+theme_override_fonts/font = ExtResource("2_65cgq")
+theme_override_font_sizes/font_size = 25
+text = "Intenta de nuevo"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1965626435]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 93.0
+offset_right = 213.0
+offset_bottom = 144.0
+alignment = 1
+
+[node name="Reintentar" type="Button" parent="VBoxContainer" unique_id=501883394]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("2_65cgq")
+theme_override_font_sizes/font_size = 16
+text = "Reintentarlo"
+
+[node name="Salir" type="Button" parent="VBoxContainer" unique_id=1528393085]
+texture_filter = 1
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("2_65cgq")
+theme_override_font_sizes/font_size = 16
+text = "Salir"
+
+[connection signal="pressed" from="VBoxContainer/Reintentar" to="." method="_on_button_reintentar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_button_salir_pressed"]
