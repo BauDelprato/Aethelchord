@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://myayjb3bhog7"
-path="res://.godot/imported/titleScreenBackground.png-91a97afc9996bb328ae159ffdf38d6a4.ctex"
+path="res://.godot/imported/titleScreenBackground.png-ac4877c40d6bb00b9c48781a368effe2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/backgrounds/titleScreenBackground.png"
-dest_files=["res://.godot/imported/titleScreenBackground.png-91a97afc9996bb328ae159ffdf38d6a4.ctex"]
+source_file="res://assets/Backgrounds/titleScreenBackground.png"
+dest_files=["res://.godot/imported/titleScreenBackground.png-ac4877c40d6bb00b9c48781a368effe2.ctex"]
 
 [params]
 

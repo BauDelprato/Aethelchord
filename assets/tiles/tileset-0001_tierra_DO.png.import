@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://myayjb3bhog7"
-path="res://.godot/imported/titleScreenBackground.png-ac4877c40d6bb00b9c48781a368effe2.ctex"
+uid="uid://yy8xjnchr1bx"
+path="res://.godot/imported/tileset-0001_tierra_DO.png-d555c8057fd9c5a940031fc77137c076.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Backgrounds/titleScreenBackground.png"
-dest_files=["res://.godot/imported/titleScreenBackground.png-ac4877c40d6bb00b9c48781a368effe2.ctex"]
+source_file="res://assets/tiles/tileset-0001_tierra_DO.png"
+dest_files=["res://.godot/imported/tileset-0001_tierra_DO.png-d555c8057fd9c5a940031fc77137c076.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cluh4m0f5luai"]
 
 [ext_resource type="Script" uid="uid://23q3cdgrwuyc" path="res://scripts/menus/title_screen.gd" id="1_7vamw"]
-[ext_resource type="Texture2D" uid="uid://myayjb3bhog7" path="res://assets/backgrounds/titleScreenBackground.png" id="1_y8l25"]
+[ext_resource type="Texture2D" uid="uid://myayjb3bhog7" path="res://assets/Backgrounds/titleScreenBackground.png" id="1_y8l25"]
 [ext_resource type="Texture2D" uid="uid://ci33y8pp6l84e" path="res://assets/sprites/titleScreen/aethelchord.webp" id="3_x612o"]
 [ext_resource type="FontFile" uid="uid://dgws5s3ja0e0g" path="res://assets/fonts/blacher.regular.otf" id="4_aofsy"]
 

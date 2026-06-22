@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://myayjb3bhog7"
-path="res://.godot/imported/titleScreenBackground.png-ac4877c40d6bb00b9c48781a368effe2.ctex"
+uid="uid://dwutjbx7xdc8q"
+path="res://.godot/imported/Fondo_escena1_01-bosque-verde-oscuro_XXL.png-611083261bdf0dc70cb8b27ec458d3a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Backgrounds/titleScreenBackground.png"
-dest_files=["res://.godot/imported/titleScreenBackground.png-ac4877c40d6bb00b9c48781a368effe2.ctex"]
+source_file="res://assets/Fondo_escena1_01-bosque-verde-oscuro_XXL.png"
+dest_files=["res://.godot/imported/Fondo_escena1_01-bosque-verde-oscuro_XXL.png-611083261bdf0dc70cb8b27ec458d3a4.ctex"]
 
 [params]
 
