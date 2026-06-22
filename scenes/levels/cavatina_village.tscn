@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dxgnavuxy43oh"]
 
-[ext_resource type="Texture2D" uid="uid://y56cnj2mikc8" path="res://assets/Backgrounds/fondo_bosque_verde_oscuro.png" id="1_0xrvu"]
+[ext_resource type="Texture2D" uid="uid://04jia70icllw" path="res://assets/Fondo_escena1_bosque_verde_oscuro_XL.png" id="1_1g2ii"]
 [ext_resource type="Texture2D" uid="uid://b8w4xflh0kh0o" path="res://assets/tiles/finaltiles/TX Chest Animation.png" id="1_nxgde"]
 [ext_resource type="Texture2D" uid="uid://c0rwbfxnsg3e8" path="res://assets/tiles/finaltiles/Buildings.png" id="2_1g2ii"]
 [ext_resource type="Texture2D" uid="uid://b6qqdxa3xwcpo" path="res://assets/tiles/finaltiles/TX Village Props.png" id="2_88iix"]
@@ -5027,7 +5027,7 @@ sources/2 = SubResource("TileSetAtlasSource_157oa")
 
 [node name="background" type="Sprite2D" parent="." unique_id=977997098]
 position = Vector2(524, -106)
-texture = ExtResource("1_0xrvu")
+texture = ExtResource("1_1g2ii")
 
 [node name="houses" type="Node2D" parent="." unique_id=996049339]
 

@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_empezar_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/levels/Escena_Inicial.tscn") # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/levels/Bosque_Inicial.tscn") # Replace with function body.
 
 
 func _on_opciones_pressed() -> void: 
