@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://myayjb3bhog7"
-path="res://.godot/imported/titleScreenBackground.png-ac4877c40d6bb00b9c48781a368effe2.ctex"
+uid="uid://c8wprm5gusvnd"
+path="res://.godot/imported/lyre death.png-59a19be617d8f9e6bddbd22ce4192d59.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Backgrounds/titleScreenBackground.png"
-dest_files=["res://.godot/imported/titleScreenBackground.png-ac4877c40d6bb00b9c48781a368effe2.ctex"]
+source_file="res://assets/sprites/lyra/lyre death.png"
+dest_files=["res://.godot/imported/lyre death.png-59a19be617d8f9e6bddbd22ce4192d59.ctex"]
 
 [params]
 

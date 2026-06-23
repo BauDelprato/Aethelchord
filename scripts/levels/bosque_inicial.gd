@@ -4,7 +4,8 @@ extends Node2D
 const GloboArriba = preload("res://resources/dialogues/balloon_top.tscn")
 
 func _ready():
-	pass # etc
+	$Lyra/AbilityManager.enabled = false #DESACTIVA el ataque, llamar a enabled = false para desactivar
+	
 
 func _on_trigger_intro_body_entered(body):
 	if body.name == "Lyra":

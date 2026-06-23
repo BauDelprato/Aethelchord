@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Aethelchord"
-run/main_scene="uid://cluh4m0f5luai"
+run/main_scene="uid://dxgnavuxy43oh"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [autoload]
 
 DialogueManager="*uid://c3rodes2l3gxb"
 Global="*uid://kw4tnuiqinqf"
+LevelManager="*uid://6kvmwqn81epf"
 
 [dialogue_manager]
 

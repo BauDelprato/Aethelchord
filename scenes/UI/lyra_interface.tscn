@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://08r4qaikrm08"]
+
+[ext_resource type="Script" uid="uid://b8krwq0se0cr6" path="res://scripts/UI/canvas_layer.gd" id="1_ooh86"]
+
+[node name="LyraInterface" type="Control" unique_id=201671588]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1830966072]
+script = ExtResource("1_ooh86")
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=110073602]
+offset_left = 23.0
+offset_top = 577.0
+offset_right = 365.0
+offset_bottom = 626.0

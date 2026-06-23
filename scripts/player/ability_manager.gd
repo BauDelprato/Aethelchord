@@ -1,14 +1,18 @@
 extends Node2D
-#CLASE MANEJADORA DE HABILIDADES BÁSICAS (ataque, bloqueo y dash)
-@onready var Attackbox=$"../Attackbox"
-@onready var AttackCollision=$"../Attackbox/CollisionShape2D"
-@onready var animation=$"../AnimatedSprite2D"
+
+var enabled := true
+
+@onready var Attackbox = $"../Attackbox"
+@onready var AttackCollision = $"../Attackbox/CollisionShape2D"
+@onready var animation = $"../AnimatedSprite2D"
 
 func attack():
-
-	var player = get_parent() #agarra el nodo padre
+	if !enabled:
+		return
 	
-	player.is_attacking = true #variable del padre
+	var player = get_parent()
+	
+	player.is_attacking = true
 	
 	AttackCollision.disabled = false
 	Attackbox.monitoring = true
@@ -16,12 +20,9 @@ func attack():
 	await animation.animation_finished
 	
 	Attackbox.monitoring = false
-	
 	AttackCollision.disabled = true
 	
 	player.is_attacking = false
-	
-	
 	
 	print("SE PRODUJO UN ATAQUE DE LYRA")
 	
