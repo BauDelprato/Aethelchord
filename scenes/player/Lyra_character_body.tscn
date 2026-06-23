@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://qt77f82nxxir" path="res://assets/sprites/lyra/lyre attack+walk simplified.png" id="4_n4tnu"]
 [ext_resource type="Texture2D" uid="uid://dr7ea3vefvu57" path="res://assets/sprites/lyra/lyre jump idle.png" id="5_5ns0u"]
 [ext_resource type="Script" uid="uid://xuqgcvhd7fee" path="res://scripts/player/ability_manager.gd" id="5_73p6n"]
+[ext_resource type="Texture2D" uid="uid://c8wprm5gusvnd" path="res://assets/sprites/lyra/lyre death.png" id="6_1bugy"]
 [ext_resource type="Texture2D" uid="uid://dplq10wfy3ff7" path="res://assets/sprites/lyra/lyre jump walk.png" id="6_j2ki5"]
 [ext_resource type="Texture2D" uid="uid://bihmd668l1fdm" path="res://assets/sprites/lyra/lyre damage.png" id="7_j2ki5"]
 
@@ -36,7 +37,6 @@ func take_damage(amount):
 	health_changed.emit(current_health)
 
 	if current_health <= 0:
-		print(\"LYRA DE MURIÓ :c\")
 		died.emit()
 		return
 "
@@ -91,6 +91,46 @@ region = Rect2(832, 0, 208, 99)
 [sub_resource type="AtlasTexture" id="AtlasTexture_h1pi4"]
 atlas = ExtResource("4_n4tnu")
 region = Rect2(1040, 0, 208, 99)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vh6wk"]
+atlas = ExtResource("6_1bugy")
+region = Rect2(0, 0, 144, 99)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwek7"]
+atlas = ExtResource("6_1bugy")
+region = Rect2(144, 0, 144, 99)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1p7q"]
+atlas = ExtResource("6_1bugy")
+region = Rect2(288, 0, 144, 99)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2p0ba"]
+atlas = ExtResource("6_1bugy")
+region = Rect2(432, 0, 144, 99)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3s8n7"]
+atlas = ExtResource("6_1bugy")
+region = Rect2(576, 0, 144, 99)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cnf3"]
+atlas = ExtResource("6_1bugy")
+region = Rect2(720, 0, 144, 99)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgv1b"]
+atlas = ExtResource("6_1bugy")
+region = Rect2(864, 0, 144, 99)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fy1r"]
+atlas = ExtResource("6_1bugy")
+region = Rect2(1008, 0, 144, 99)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3k23"]
+atlas = ExtResource("6_1bugy")
+region = Rect2(1152, 0, 144, 99)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3crs"]
+atlas = ExtResource("6_1bugy")
+region = Rect2(1296, 0, 144, 99)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h0d5q"]
 atlas = ExtResource("2_lxlh8")
@@ -317,6 +357,41 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 0.9,
+"texture": SubResource("AtlasTexture_vh6wk")
+}, {
+"duration": 0.9,
+"texture": SubResource("AtlasTexture_dwek7")
+}, {
+"duration": 0.9,
+"texture": SubResource("AtlasTexture_b1p7q")
+}, {
+"duration": 0.9,
+"texture": SubResource("AtlasTexture_2p0ba")
+}, {
+"duration": 0.9,
+"texture": SubResource("AtlasTexture_3s8n7")
+}, {
+"duration": 0.9,
+"texture": SubResource("AtlasTexture_5cnf3")
+}, {
+"duration": 0.9,
+"texture": SubResource("AtlasTexture_pgv1b")
+}, {
+"duration": 0.9,
+"texture": SubResource("AtlasTexture_8fy1r")
+}, {
+"duration": 0.9,
+"texture": SubResource("AtlasTexture_c3k23")
+}, {
+"duration": 0.9,
+"texture": SubResource("AtlasTexture_r3crs")
+}],
+"loop": false,
+"name": &"lyra_defeated",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h0d5q")
 }, {
@@ -511,7 +586,7 @@ debug_color = Color(0.9882204, 0, 0.3027967, 0.41960785)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=726138740]
 position = Vector2(4, 0)
 sprite_frames = SubResource("SpriteFrames_mfp5r")
-animation = &"lyra_take_damage"
+animation = &"lyra_defeated"
 
 [node name="AbilityManager" type="Node2D" parent="." unique_id=2147113723]
 script = ExtResource("5_73p6n")

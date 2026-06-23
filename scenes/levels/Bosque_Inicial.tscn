@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dcuvfonru1uq0" path="res://scenes/player/Lyra_character_body.tscn" id="4_o0vi4"]
 [ext_resource type="Texture2D" uid="uid://cex4ups4bsct1" path="res://assets/Backgrounds/Fondo_escena1_01-contorno-negro_XXL.png" id="5_cwe6d"]
 [ext_resource type="Texture2D" uid="uid://yy8xjnchr1bx" path="res://assets/tiles/tileset-0001_tierra_DO.png" id="6_o0vi4"]
+[ext_resource type="Script" uid="uid://b6kftmy1rt3qc" path="res://scripts/levels/level_transitions/transition_to_cavatina.gd" id="9_cwe6d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cwe6d"]
 texture = ExtResource("6_o0vi4")
@@ -164,6 +165,9 @@ sources/0 = SubResource("TileSetAtlasSource_cwe6d")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vne54"]
 size = Vector2(472, 32.25)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0vi4"]
+size = Vector2(111, 377)
+
 [node name="BosqueInicial" type="Node2D" unique_id=673431237]
 script = ExtResource("1_wka7j")
 intro_dialogue = ExtResource("2_wka7j")
@@ -214,5 +218,12 @@ position = Vector2(82.635, 0)
 position = Vector2(778.365, 266)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_vne54")
+
+[node name="TransitionToCavatina" type="Area2D" parent="." unique_id=163428995]
+script = ExtResource("9_cwe6d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionToCavatina" unique_id=2119934102]
+position = Vector2(5341.5, 274.5)
+shape = SubResource("RectangleShape2D_o0vi4")
 
 [connection signal="body_entered" from="triggerIntro" to="." method="_on_trigger_intro_body_entered"]
