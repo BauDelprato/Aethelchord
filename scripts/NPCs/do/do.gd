@@ -15,12 +15,10 @@ const lyra_and_do2 = preload("res://resources/dialogues/lyra_and_do2.dialogue")
 func _ready():
 	hurtbox.monitoring = false #hurtbox desactivada hasta el combate
 	
-
-	
 	DialogueManager.dialogue_started.connect(_on_dialogue_started)
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)  
 	DialogueManager.dialogue_started.connect(_on_dialogue_started2)
-	DialogueManager.dialogue_started.connect(_on_dialogue_started2)
+	DialogueManager.dialogue_ended.connect(_on_dialogue_started2)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -51,15 +49,20 @@ func _physics_process(delta):
 
 func _on_text_area_area_entered(area):#PARA DIÁLOGOS USAR LAYER NULA MASK 6
 	is_player_close = true
+	if not do_defeated:
+		Eventos.mostrar_aviso_interaccion.emit("Toca X para hablar")
+	else:
+		Eventos.mostrar_aviso_interaccion.emit("Toca X para interactuar")
 
 
 func _on_text_area_area_exited(area):
 	is_player_close = false
-	# Replace with function body.
+	Eventos.ocultar_aviso_interaccion.emit()
 
 func _on_dialogue_started(lyra_and_do1):
 	lyra_position.set_physics_process(false)
 	is_dialogue_active = true
+	Eventos.ocultar_aviso_interaccion.emit()
 
 func _on_dialogue_ended(lyra_and_do1):
 	lyra_position.set_physics_process(true)
@@ -70,6 +73,7 @@ func _on_dialogue_ended(lyra_and_do1):
 func _on_dialogue_started2(lyra_and_do2):
 	lyra_position.set_physics_process(false)
 	is_dialogue_active = true
+	Eventos.ocultar_aviso_interaccion.emit()
 	pass
 	
 

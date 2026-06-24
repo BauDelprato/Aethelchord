@@ -14,14 +14,23 @@ config/name="Aethelchord"
 run/main_scene="uid://cluh4m0f5luai"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[audio]
+
+buses/default_bus_layout="uid://bfyx4pig0rvbo"
+
 [autoload]
 
 DialogueManager="*uid://c3rodes2l3gxb"
 Global="*uid://kw4tnuiqinqf"
+Eventos="*uid://cxl4btn8cgtms"
 
 [dialogue_manager]
 
 runtime/balloon_path="res://resources/dialogues/balloon.tscn"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 

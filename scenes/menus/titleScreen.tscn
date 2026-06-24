@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://myayjb3bhog7" path="res://assets/Backgrounds/titleScreenBackground.png" id="1_y8l25"]
 [ext_resource type="Texture2D" uid="uid://ci33y8pp6l84e" path="res://assets/sprites/titleScreen/aethelchord.webp" id="3_x612o"]
 [ext_resource type="FontFile" uid="uid://dgws5s3ja0e0g" path="res://assets/fonts/blacher.regular.otf" id="4_aofsy"]
+[ext_resource type="Script" uid="uid://bjndikxqsjguu" path="res://scripts/menus/sound_control.gd" id="5_s1dqx"]
+[ext_resource type="Script" uid="uid://u6c40gxk18r6" path="res://scripts/menus/fullscren_control.gd" id="6_aofsy"]
+[ext_resource type="AudioStream" uid="uid://bixhpjk4urni1" path="res://sound/music/viento_ambient1.ogg" id="6_x612o"]
 
 [node name="TitleScreen" type="Control" unique_id=375118961]
 layout_mode = 3
@@ -66,6 +69,7 @@ theme_override_font_sizes/font_size = 38
 text = "Salir del juego"
 
 [node name="MiniJuego" type="Button" parent="Button_manager" unique_id=1451615856]
+visible = false
 layout_mode = 0
 offset_left = 496.0
 offset_top = 520.0
@@ -77,7 +81,108 @@ theme_override_fonts/font = ExtResource("4_aofsy")
 theme_override_font_sizes/font_size = 24
 text = "Mini juego"
 
+[node name="Options" type="Panel" parent="." unique_id=1494837169]
+layout_mode = 0
+offset_left = 337.0
+offset_top = 208.0
+offset_right = 821.0
+offset_bottom = 527.0
+
+[node name="Label" type="Label" parent="Options" unique_id=1889582809]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 10.0
+offset_bottom = 41.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_aofsy")
+theme_override_font_sizes/font_size = 30
+text = "Configuraciones"
+horizontal_alignment = 1
+
+[node name="AtrasButton" type="Button" parent="Options" unique_id=1923628754]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.95000005
+anchor_right = 0.5
+anchor_bottom = 0.97800004
+offset_left = -28.0
+offset_top = -0.05001831
+offset_right = 28.0
+offset_bottom = -0.98202515
+grow_horizontal = 2
+grow_vertical = 0
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("4_aofsy")
+theme_override_font_sizes/font_size = 26
+text = "Volver"
+
+[node name="HSliderSound" type="HSlider" parent="Options" unique_id=199662066]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 70.0
+offset_right = 457.0
+offset_bottom = 96.0
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("5_s1dqx")
+audio_bus_name = "Sounds"
+
+[node name="Sound" type="Label" parent="Options" unique_id=1122073528]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 70.0
+offset_right = 74.0
+offset_bottom = 93.0
+theme_override_fonts/font = ExtResource("4_aofsy")
+theme_override_font_sizes/font_size = 22
+text = "Sonido"
+
+[node name="HSliderMusic" type="HSlider" parent="Options" unique_id=165532959]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 113.0
+offset_right = 457.0
+offset_bottom = 139.0
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("5_s1dqx")
+audio_bus_name = "Music"
+
+[node name="Music" type="Label" parent="Options" unique_id=1823238543]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 113.0
+offset_right = 87.0
+offset_bottom = 136.0
+theme_override_fonts/font = ExtResource("4_aofsy")
+theme_override_font_sizes/font_size = 22
+text = "Musica"
+
+[node name="FullscrenControl" type="CheckButton" parent="Options" unique_id=1942939466]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 155.0
+offset_right = 457.0
+offset_bottom = 200.0
+theme_override_fonts/font = ExtResource("4_aofsy")
+theme_override_font_sizes/font_size = 22
+text = "Pantalla completa"
+script = ExtResource("6_aofsy")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=91864135]
+stream = ExtResource("6_x612o")
+autoplay = true
+bus = &"Music"
+
 [connection signal="pressed" from="Button_manager/Empezar" to="." method="_on_empezar_pressed"]
 [connection signal="pressed" from="Button_manager/Opciones" to="." method="_on_opciones_pressed"]
 [connection signal="pressed" from="Button_manager/Salir" to="." method="_on_salir_pressed"]
 [connection signal="pressed" from="Button_manager/MiniJuego" to="." method="_on_mini_juego_pressed"]
+[connection signal="pressed" from="Options/AtrasButton" to="." method="_on_atras_button_pressed"]
+[connection signal="value_changed" from="Options/HSliderSound" to="Options/HSliderSound" method="_on_value_changed"]
+[connection signal="value_changed" from="Options/HSliderMusic" to="Options/HSliderMusic" method="_on_value_changed"]
+[connection signal="toggled" from="Options/FullscrenControl" to="Options/FullscrenControl" method="_on_toggled"]

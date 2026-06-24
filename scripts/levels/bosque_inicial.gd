@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var intro_dialogue: DialogueResource 
-const GloboArriba = preload("res://resources/dialogues/balloon_top.tscn")
+const GloboArriba = preload("res://resources/dialogues/balloon.tscn")
 
 func _ready():
 	pass # etc
