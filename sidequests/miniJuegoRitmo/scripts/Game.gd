@@ -10,8 +10,10 @@ var okay = 0
 var missed = 0
 
 var note = load("res://sidequests/miniJuegoRitmo/scenes/Note.tscn")
-var ultimo_beat_registrado = -1.0
 var canales_disponibles = []
+var ultimo_beat_registrado = -1.0
+var ultimo_carril_usado = -1
+var carriles_usados_en_este_beat = []
 
 func _ready():
 	randomize()
@@ -33,15 +35,28 @@ func _on_Conductor_spawn_note(_target_beat):
 	_spawn_notes(_target_beat)
 
 
-func _spawn_notes(_target_beat):
-	if _target_beat != ultimo_beat_registrado:
-		ultimo_beat_registrado = _target_beat
-		canales_disponibles = [0, 1, 2] 
-		canales_disponibles.shuffle() 
+func _spawn_notes(target_beat):
+	if abs(target_beat - ultimo_beat_registrado) > 0.15:
+		ultimo_beat_registrado = target_beat
+		carriles_usados_en_este_beat.clear()
+		
+	var carriles_posibles = [0, 1, 2]
 	
-	if canales_disponibles.is_empty():
-		return
-	var lane = canales_disponibles.pop_back() #con esto los carriles no se repiten
+	for c in carriles_usados_en_este_beat:
+		carriles_posibles.erase(c)
+		
+	if carriles_posibles.size() > 1 and carriles_posibles.has(ultimo_carril_usado):
+		carriles_posibles.erase(ultimo_carril_usado)
+		
+	#(por si el MIDI manda un acorde de 4 notas)
+	if carriles_posibles.is_empty():
+		carriles_posibles = [0, 1, 2]
+		
+	var lane = carriles_posibles.pick_random()
+	
+	carriles_usados_en_este_beat.append(lane)
+	ultimo_carril_usado = lane
+	
 	var instance = note.instantiate()
 	instance.initialize(lane)
 	add_child(instance)
@@ -56,7 +71,7 @@ func _on_Conductor_finished():
 	print("Puntaje obtenido: ", score, " / ", max_score_posible)
 	print("Porcentaje de precisión: ", porcentaje, "%")
 	
-	if porcentaje >= 10.0:
+	if porcentaje >= 30.0:
 		Global.minijuego_ganado = true
 	else:
 		Global.minijuego_ganado = false

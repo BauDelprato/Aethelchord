@@ -15,4 +15,8 @@ func _on_body_exited(body):
 
 func _unhandled_input(event):
 	if lyra_en_rango and event.is_action_pressed("interact"):
+		#guardamos la posicion de lyra 
+		Global.posicion_jugador = $"../Lyra".global_position
+		Global.volviendo_de_minijuego = true
+		
 		get_tree().change_scene_to_file("res://sidequests/miniJuegoRitmo/scenes/Game.tscn")

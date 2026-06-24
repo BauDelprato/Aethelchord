@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://cvdqs78fe7b7u"]
+
+[ext_resource type="FontFile" uid="uid://dgws5s3ja0e0g" path="res://assets/fonts/blacher.regular.otf" id="1_slhc7"]
+[ext_resource type="Script" uid="uid://bjndikxqsjguu" path="res://scripts/menus/sound_control.gd" id="2_t312m"]
+[ext_resource type="Script" uid="uid://u6c40gxk18r6" path="res://scripts/menus/fullscren_control.gd" id="3_q6yoi"]
+
+[node name="Options" type="Panel" unique_id=1630081222]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -242.0
+offset_top = -159.5
+offset_right = 242.0
+offset_bottom = 159.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2029619765]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1405299173]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_slhc7")
+theme_override_font_sizes/font_size = 30
+text = "Configuraciones"
+horizontal_alignment = 1
+
+[node name="HSliderSound" type="HSlider" parent="." unique_id=656658589]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 70.0
+offset_right = 457.0
+offset_bottom = 96.0
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("2_t312m")
+audio_bus_name = "Sounds"
+
+[node name="Sound" type="Label" parent="." unique_id=1240276256]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 70.0
+offset_right = 74.0
+offset_bottom = 93.0
+theme_override_fonts/font = ExtResource("1_slhc7")
+theme_override_font_sizes/font_size = 22
+text = "Sonido"
+
+[node name="HSliderMusic" type="HSlider" parent="." unique_id=1485326241]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 113.0
+offset_right = 457.0
+offset_bottom = 139.0
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("2_t312m")
+audio_bus_name = "Music"
+
+[node name="Music" type="Label" parent="." unique_id=252676346]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 113.0
+offset_right = 87.0
+offset_bottom = 136.0
+theme_override_fonts/font = ExtResource("1_slhc7")
+theme_override_font_sizes/font_size = 22
+text = "Musica"
+
+[node name="FullscrenControl" type="CheckButton" parent="." unique_id=40278959]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 155.0
+offset_right = 457.0
+offset_bottom = 200.0
+theme_override_fonts/font = ExtResource("1_slhc7")
+theme_override_font_sizes/font_size = 22
+text = "Pantalla completa"
+script = ExtResource("3_q6yoi")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=60010142]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="AtrasButton" type="Button" parent="VBoxContainer2" unique_id=664170924]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("1_slhc7")
+theme_override_font_sizes/font_size = 26
+text = "Volver"
+
+[connection signal="value_changed" from="HSliderSound" to="HSliderSound" method="_on_value_changed"]
+[connection signal="value_changed" from="HSliderMusic" to="HSliderMusic" method="_on_value_changed"]
+[connection signal="toggled" from="FullscrenControl" to="FullscrenControl" method="_on_toggled"]

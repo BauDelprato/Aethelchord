@@ -10,3 +10,7 @@ func _ready():
 	camara_jugador.limit_top = rectangulo_mapa.position.y * tamano_tile.y
 	camara_jugador.limit_right = rectangulo_mapa.end.x * tamano_tile.x
 	camara_jugador.limit_bottom = rectangulo_mapa.end.y * tamano_tile.y
+	
+	if Global.volviendo_de_minijuego == true:
+		$Lyra.global_position = Global.posicion_jugador
+		Global.volviendo_de_minijuego = false

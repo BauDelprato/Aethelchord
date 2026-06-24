@@ -1,5 +1,7 @@
 extends Node2D
 
+var posicion_jugador: Vector2 = Vector2.ZERO
+var volviendo_de_minijuego: bool = false
 
 var score = 0
 var combo = 0
@@ -10,6 +12,7 @@ var missed = 0
 var grade = "NA"
 
 var minijuego_ganado = false
+
 
 
 func set_score(new):
