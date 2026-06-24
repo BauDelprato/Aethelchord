@@ -1,6 +1,15 @@
 extends Node2D
 
+
 @export var intro_dialogue: DialogueResource 
+
+#limites de camara
+@export_category("Scene Limits")
+@export var limit_left: int = -60
+@export var limit_right: int = 8100
+@export var limit_top: int = -20
+@export var limit_bottom: int = 600
+
 const GloboArriba = preload("res://resources/dialogues/balloon_top.tscn")
 
 func _ready():
