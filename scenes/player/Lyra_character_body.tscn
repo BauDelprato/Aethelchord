@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bnfr8cj2jhtp4" path="res://scripts/player/character_body_2d.gd" id="1_s25n1"]
 [ext_resource type="Texture2D" uid="uid://c4e7mhedsmhe6" path="res://assets/sprites/lyra/lyre idle 1.png" id="2_lxlh8"]
-[ext_resource type="Script" uid="uid://dhruhvftk60dv" path="res://scenes/player/camera_2d.gd" id="3_08m0r"]
 [ext_resource type="Texture2D" uid="uid://1mb51eaudnh6" path="res://assets/sprites/lyra/lyre walk.png" id="3_87eo2"]
 [ext_resource type="Script" uid="uid://d4j77xrl0b3r2" path="res://scripts/enemies/hurtbox.gd" id="3_lh0r4"]
 [ext_resource type="Texture2D" uid="uid://cxuyrs2rgsi4q" path="res://assets/sprites/lyra/lyre attack standing2.png" id="4_73p6n"]
@@ -13,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://dplq10wfy3ff7" path="res://assets/sprites/lyra/lyre jump walk.png" id="6_j2ki5"]
 [ext_resource type="Texture2D" uid="uid://bihmd668l1fdm" path="res://assets/sprites/lyra/lyre damage.png" id="7_j2ki5"]
 [ext_resource type="AudioStream" uid="uid://dxrkd8hircfq7" path="res://sound/effects/pasos/PASOS 1.ogg" id="11_1bugy"]
+[ext_resource type="PackedScene" uid="uid://bttg7nmyq36av" path="res://scenes/HUD.tscn" id="14_l2q50"]
+[ext_resource type="PackedScene" uid="uid://08r4qaikrm08" path="res://scenes/UI/lyra_interface.tscn" id="15_drdjx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yqqr5"]
 radius = 8.0
@@ -573,7 +574,6 @@ hframes = 7
 position = Vector2(0, -150.41)
 zoom = Vector2(1.2, 1.2)
 position_smoothing_enabled = true
-script = ExtResource("3_08m0r")
 
 [node name="HealthManager" type="Node2D" parent="." unique_id=20784656]
 script = SubResource("GDScript_6db5m")
@@ -591,7 +591,6 @@ debug_color = Color(0.9882204, 0, 0.3027967, 0.41960785)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=726138740]
 position = Vector2(4, 0)
 sprite_frames = SubResource("SpriteFrames_mfp5r")
-animation = &"lyra_walk"
 animation = &"lyra_defeated"
 
 [node name="AbilityManager" type="Node2D" parent="." unique_id=2147113723]
@@ -612,6 +611,19 @@ stream = ExtResource("11_1bugy")
 volume_db = -25.0
 max_distance = 1143.0
 bus = &"Sounds"
+
+[node name="Hud" parent="." unique_id=1472264023 instance=ExtResource("14_l2q50")]
+
+[node name="LyraInterface" parent="." unique_id=201671588 instance=ExtResource("15_drdjx")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -3236.0
+offset_top = -4018.0
+offset_right = -3236.0
+offset_bottom = -4018.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [connection signal="area_entered" from="Hurtbox" to="HealthManager" method="_on_hurtbox_area_entered"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_frame_changed"]

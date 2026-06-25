@@ -1,10 +1,16 @@
-extends CanvasLayer
+extends Node 
 
-@onready var barra_vida = $ProgressBar
-@onready var player = get_tree().get_first_node_in_group("player")
-@onready var health_manager = player.get_node("HealthManager")
+@onready var barra_vida = $CanvasLayer/Sprite2D/ProgressBar
+
+var health_manager: Node2D
 
 func _ready():
+	health_manager = owner.get_node("HealthManager")
+	
+	if health_manager == null:
+		print("ERROR CRÍTICO: La interfaz no pudo encontrar al HealthManager usando 'owner'")
+		return
+		
 	barra_vida.max_value = health_manager.max_health
 	barra_vida.value = health_manager.current_health
 

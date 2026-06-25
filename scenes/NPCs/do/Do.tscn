@@ -44,23 +44,23 @@ region = Rect2(300, 0, 100, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fne3i"]
 atlas = ExtResource("3_yf245")
-region = Rect2(0, 0, 300, 150)
+region = Rect2(0, 0, 500, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3f86x"]
 atlas = ExtResource("3_yf245")
-region = Rect2(300, 0, 300, 150)
+region = Rect2(500, 0, 500, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_il61c"]
 atlas = ExtResource("3_yf245")
-region = Rect2(600, 0, 300, 150)
+region = Rect2(1000, 0, 500, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hayh8"]
 atlas = ExtResource("3_yf245")
-region = Rect2(900, 0, 300, 150)
+region = Rect2(1500, 0, 500, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3wjbd"]
 atlas = ExtResource("3_yf245")
-region = Rect2(1200, 0, 300, 150)
+region = Rect2(2000, 0, 500, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gdbt6"]
 atlas = ExtResource("4_jou8e")
@@ -96,23 +96,23 @@ region = Rect2(300, 0, 100, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0nqvm"]
 atlas = ExtResource("5_jou8e")
-region = Rect2(0, 0, 300, 150)
+region = Rect2(0, 0, 500, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iqv70"]
 atlas = ExtResource("5_jou8e")
-region = Rect2(300, 0, 300, 150)
+region = Rect2(500, 0, 500, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uuqy6"]
 atlas = ExtResource("5_jou8e")
-region = Rect2(600, 0, 300, 150)
+region = Rect2(1000, 0, 500, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_axhdd"]
 atlas = ExtResource("5_jou8e")
-region = Rect2(900, 0, 300, 150)
+region = Rect2(1500, 0, 500, 150)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_egk0w"]
 atlas = ExtResource("5_jou8e")
-region = Rect2(1200, 0, 300, 150)
+region = Rect2(2000, 0, 500, 150)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8w3o6"]
 animations = [{
@@ -241,7 +241,7 @@ script = ExtResource("1_m8lw7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1425278395]
 sprite_frames = SubResource("SpriteFrames_8w3o6")
-animation = &"do_defeated"
+animation = &"do_walking_attack"
 
 [node name="TextArea" type="Area2D" parent="." unique_id=2137094784]
 collision_layer = 0

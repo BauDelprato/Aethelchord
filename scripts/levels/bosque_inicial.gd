@@ -1,6 +1,5 @@
 extends Node2D
 
-
 @export var intro_dialogue: DialogueResource 
 const GloboArriba = preload("res://resources/dialogues/balloon.tscn")
 
@@ -11,7 +10,6 @@ const GloboArriba = preload("res://resources/dialogues/balloon.tscn")
 @export var limit_top: int = -20
 @export var limit_bottom: int = 600
 
-const GloboArriba = preload("res://resources/dialogues/balloon_top.tscn")
 
 func _ready():
 	$Lyra/AbilityManager.enabled = false #DESACTIVA el ataque, llamar a enabled = false para desactivar

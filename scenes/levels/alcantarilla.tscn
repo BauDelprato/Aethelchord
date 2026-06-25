@@ -1,12 +1,12 @@
 [gd_scene format=4 uid="uid://cbnwbiqpe0nx1"]
 
 [ext_resource type="Texture2D" uid="uid://ufy7m2kbws5o" path="res://assets/tiles/sewer/crystal cave tiles.png" id="1_71cwc"]
-[ext_resource type="Script" uid="uid://dx42itjnrbmh3" path="res://scripts/levels/alcantarilla.gd" id="1_be2jk"]
+[ext_resource type="Script" uid="uid://dx42itjnrbmh3" path="res://scripts/levels/alcantarillas/alcantarilla.gd" id="1_be2jk"]
 [ext_resource type="PackedScene" uid="uid://dcuvfonru1uq0" path="res://scenes/player/Lyra_character_body.tscn" id="2_be2jk"]
-[ext_resource type="Script" uid="uid://bmfmjfav7tnmn" path="res://scripts/levels/trigger_mini_juego.gd" id="4_rin3e"]
+[ext_resource type="Script" uid="uid://bmfmjfav7tnmn" path="res://scripts/levels/alcantarillas/trigger_mini_juego.gd" id="4_rin3e"]
 [ext_resource type="PackedScene" uid="uid://bttg7nmyq36av" path="res://scenes/HUD.tscn" id="5_h4qjk"]
 [ext_resource type="PackedScene" uid="uid://qbawjad4msei" path="res://scenes/Enemies/enemy_1.tscn" id="6_ytqtp"]
-[ext_resource type="Script" uid="uid://chg17wvkmwmml" path="res://scenes/levels/zona_agua.gd" id="7_mcfu4"]
+[ext_resource type="Script" uid="uid://chg17wvkmwmml" path="res://scripts/levels/alcantarillas/zona_agua.gd" id="7_mcfu4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_be2jk"]
 texture = ExtResource("1_71cwc")
