@@ -1,15 +1,17 @@
 [gd_scene format=4 uid="uid://dxgnavuxy43oh"]
 
-[ext_resource type="Texture2D" uid="uid://04jia70icllw" path="res://assets/Fondo_escena1_bosque_verde_oscuro_XL.png" id="1_1g2ii"]
 [ext_resource type="Texture2D" uid="uid://b8w4xflh0kh0o" path="res://assets/tiles/finaltiles/TX Chest Animation.png" id="1_nxgde"]
+[ext_resource type="Script" uid="uid://drsr6t0pqbp1f" path="res://scenes/levels/cavatina_village.gd" id="1_rhi0q"]
 [ext_resource type="Texture2D" uid="uid://c0rwbfxnsg3e8" path="res://assets/tiles/finaltiles/Buildings.png" id="2_1g2ii"]
 [ext_resource type="Texture2D" uid="uid://b6qqdxa3xwcpo" path="res://assets/tiles/finaltiles/TX Village Props.png" id="2_88iix"]
+[ext_resource type="Texture2D" uid="uid://cut3wpalcp88j" path="res://assets/Backgrounds/Fondo_Claro_Gris.png" id="2_cj1mw"]
 [ext_resource type="Texture2D" uid="uid://v22ckc87romf" path="res://assets/tiles/tileset-0002_casa_tejas_Do.png" id="2_yiejy"]
 [ext_resource type="Texture2D" uid="uid://cx04p3acwfdyd" path="res://assets/tiles/finaltiles/TX Tileset Ground.png" id="3_0xrvu"]
 [ext_resource type="Texture2D" uid="uid://cuas334n5er72" path="res://assets/tiles/finaltiles/Tiles.png" id="3_1g2ii"]
 [ext_resource type="PackedScene" uid="uid://dcuvfonru1uq0" path="res://scenes/player/Lyra_character_body.tscn" id="4_r87hd"]
 [ext_resource type="PackedScene" uid="uid://bn30csst6flpp" path="res://scenes/NPCs/do/Do.tscn" id="5_88iix"]
 [ext_resource type="PackedScene" uid="uid://bttg7nmyq36av" path="res://scenes/HUD.tscn" id="10_157oa"]
+[ext_resource type="PackedScene" uid="uid://08r4qaikrm08" path="res://scenes/UI/lyra_interface.tscn" id="10_157oa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pqi1j"]
 texture = ExtResource("2_1g2ii")
@@ -5025,10 +5027,12 @@ sources/1 = SubResource("TileSetAtlasSource_1g2ii")
 sources/2 = SubResource("TileSetAtlasSource_157oa")
 
 [node name="CavatinaVillage" type="Node2D" unique_id=1199460148]
+script = ExtResource("1_rhi0q")
 
 [node name="background" type="Sprite2D" parent="." unique_id=977997098]
-position = Vector2(524, -106)
-texture = ExtResource("1_1g2ii")
+position = Vector2(1044, -95)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_cj1mw")
 
 [node name="houses" type="Node2D" parent="." unique_id=996049339]
 
@@ -5055,3 +5059,10 @@ position = Vector2(686, -20)
 position = Vector2(-1, 4)
 
 [node name="Hud" parent="." unique_id=1472264023 instance=ExtResource("10_157oa")]
+[node name="LyraInterface" parent="." unique_id=201671588 instance=ExtResource("10_157oa")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+metadata/_edit_use_anchors_ = true

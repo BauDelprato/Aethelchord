@@ -6,14 +6,24 @@ extends CharacterBody2D
 @onready var attackbox = $Attackbox
 @onready var step_sound = $AudioStreamPlayer
 
+@onready var ui = get_tree().get_first_node_in_group("ui")
 var is_attacking = false
 var facing_right = true
+var is_dead = false
+var respawn_position: Vector2
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+func _ready():
+	add_to_group("player") #grupo conecta con la interfaz
+	lyra_health.died.connect(_on_lyra_died) #recibe señal de muerte de HealthManager
+	respawn_position = global_position
 
 func _physics_process(delta):
+	if is_dead:
+		return
+	
 	var current_attack_animation = ""
 	# Gravedad
 	if not is_on_floor():
@@ -27,7 +37,7 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 
 	# Ataque
-	if Input.is_action_just_pressed("attack") and !is_attacking:
+	if Input.is_action_just_pressed("attack") and !is_attacking and $AbilityManager.enabled:
 		is_attacking = true
 
 		if direction != 0:
@@ -64,7 +74,8 @@ func _physics_process(delta):
 
 
 func update_animation(direction):
-	
+	if is_dead:
+		return
 	#ataque
 	if is_attacking:
 		if direction != 0:
@@ -112,3 +123,36 @@ func _on_frame_changed():
 			step_sound.pitch_scale = randf_range(0.8, 1.2) #se le cambia el pitch
 			step_sound.play()
 			
+			
+
+func _on_lyra_died():
+	print("LYRA DE MURIÓ :c") #debug eliminar una vez que todo funcione!!!
+	is_dead = true
+	# cortar control inmediato
+	velocity = Vector2.ZERO
+
+	# opcional: desactivar sistemas
+	$AbilityManager.enabled = false
+	is_attacking = false
+
+	# forzar animación de muerte (interrumpe cualquier otra)
+	animation.stop()
+	animation.play("lyra_defeated")
+	
+	# iniciar respawn
+	respawn()
+	
+
+func respawn():
+	await get_tree().create_timer(1.5).timeout
+	is_dead = false
+	global_position = respawn_position
+	velocity = Vector2.ZERO
+	# restaurar vida
+	lyra_health.current_health = lyra_health.max_health
+	lyra_health.health_changed.emit(lyra_health.current_health)
+	# reactivar sistemas
+	$AbilityManager.enabled = true
+	is_attacking = false
+	# reset animación
+	animation.play("lyra_idle")

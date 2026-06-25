@@ -44,6 +44,8 @@ func _physics_process(delta):
 	elif animation.animation != "do_take_damage" or not animation.is_playing():
 		if not attackcollision.disabled:
 			animation.play("do_idle_attack")
+		elif do_defeated:
+			animation.play("do_defeated")
 		else:
 			animation.play("do_idle")
 

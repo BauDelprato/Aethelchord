@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Aethelchord"
-run/main_scene="uid://cluh4m0f5luai"
+run/main_scene="uid://dxgnavuxy43oh"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [audio]
@@ -23,6 +23,7 @@ buses/default_bus_layout="uid://bfyx4pig0rvbo"
 DialogueManager="*uid://c3rodes2l3gxb"
 Global="*uid://kw4tnuiqinqf"
 Eventos="*uid://cxl4btn8cgtms"
+LevelManager="*uid://6kvmwqn81epf"
 
 [dialogue_manager]
 
