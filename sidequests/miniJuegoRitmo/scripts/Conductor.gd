@@ -52,12 +52,10 @@ func cargar_notas_desde_json(ruta: String):
 			for nota in track["notes"]:
 				var tiempo_en_segundos = nota["time"]
 				
-				# El JSON nos da la posición en segundos exactos.
-				# Lo dividimos para convertirlo al formato de beats que usa tu lógica.
 				var beat_exacto = tiempo_en_segundos / sec_per_beat
 				notas_cancion.append(beat_exacto)
 			
-			break # Ya leímos la pista correcta, salimos del bucle
+			break 
 			
 	print("¡Éxito! Se cargaron ", notas_cancion.size(), " notas de forma automática.")
 

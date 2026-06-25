@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bf0kk4thwp6co" path="res://sidequests/miniJuegoRitmo/scenes/ArrowButton.tscn" id="5_ipfsg"]
 [ext_resource type="SpriteFrames" uid="uid://bpc7fq8sfrj2p" path="res://sidequests/miniJuegoRitmo/frames/arrow_left_frame.tres" id="5_st7lp"]
 [ext_resource type="SpriteFrames" uid="uid://mqaynql4wdpe" path="res://sidequests/miniJuegoRitmo/frames/arrow_right_frame.tres" id="6_ipfsg"]
+[ext_resource type="AudioStream" uid="uid://pq22n2af7ol" path="res://sound/music/Eminor_v2.ogg" id="8_gogea"]
 [ext_resource type="FontFile" uid="uid://dtt1gewc7b2t7" path="res://assets/fonts/HeartbitXX2Px.ttf" id="10_h8x5s"]
-[ext_resource type="AudioStream" uid="uid://fkfp34ea7c1u" path="res://sound/eminor.ogg" id="11_r47e2"]
 [ext_resource type="Script" uid="uid://1vby0qxhra3s" path="res://sidequests/miniJuegoRitmo/scripts/Conductor.gd" id="12_ncgh5"]
 
 [node name="Game" type="Node2D" unique_id=314211749]
@@ -60,8 +60,9 @@ theme_override_colors/font_color = Color(0.9647059, 0.8392157, 0.7411765, 1)
 theme_override_fonts/font = ExtResource("10_h8x5s")
 
 [node name="Conductor" type="AudioStreamPlayer" parent="." unique_id=1197977747]
-stream = ExtResource("11_r47e2")
+stream = ExtResource("8_gogea")
 autoplay = true
+bus = &"Music"
 script = ExtResource("12_ncgh5")
 
 [node name="StartTimer" type="Timer" parent="Conductor" unique_id=331757640]

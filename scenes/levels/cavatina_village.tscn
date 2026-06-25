@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cuas334n5er72" path="res://assets/tiles/finaltiles/Tiles.png" id="3_1g2ii"]
 [ext_resource type="PackedScene" uid="uid://dcuvfonru1uq0" path="res://scenes/player/Lyra_character_body.tscn" id="4_r87hd"]
 [ext_resource type="PackedScene" uid="uid://bn30csst6flpp" path="res://scenes/NPCs/do/Do.tscn" id="5_88iix"]
+[ext_resource type="PackedScene" uid="uid://bttg7nmyq36av" path="res://scenes/HUD.tscn" id="10_157oa"]
 [ext_resource type="PackedScene" uid="uid://08r4qaikrm08" path="res://scenes/UI/lyra_interface.tscn" id="10_157oa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pqi1j"]
@@ -5057,6 +5058,7 @@ position = Vector2(686, -20)
 [node name="Lyra" parent="." unique_id=1019969014 instance=ExtResource("4_r87hd")]
 position = Vector2(-1, 4)
 
+[node name="Hud" parent="." unique_id=1472264023 instance=ExtResource("10_157oa")]
 [node name="LyraInterface" parent="." unique_id=201671588 instance=ExtResource("10_157oa")]
 anchors_preset = 0
 anchor_right = 0.0

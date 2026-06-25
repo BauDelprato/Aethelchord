@@ -4,6 +4,8 @@ extends CharacterBody2D
 @onready var lyra_health = $HealthManager
 @onready var lyra_ability = $AbilityManager
 @onready var attackbox = $Attackbox
+@onready var step_sound = $AudioStreamPlayer
+
 @onready var ui = get_tree().get_first_node_in_group("ui")
 var is_attacking = false
 var facing_right = true
@@ -105,6 +107,22 @@ func update_animation(direction):
 	else:
 		if animation.animation != "lyra_idle":
 			animation.play("lyra_idle")
+
+#para el sonido de los pasos
+var step_sounds = [ #se ahce un array con distintos tipos de pasos
+	preload("res://sound/effects/pasos/PASOS 1.ogg"),
+	preload("res://sound/effects/pasos/PASOS 2.ogg"),
+	preload("res://sound/effects/pasos/PASOS 3.ogg"),
+	preload("res://sound/effects/pasos/PASOS 4.ogg"),
+	preload("res://sound/effects/pasos/PASOS 5.ogg")
+]
+func _on_frame_changed():
+	if animation.animation == "lyra_walk":
+		if animation.frame in [0, 2, 3, 5, 7, 9, 11, 13]: #frames en donde el pie toca el piso
+			step_sound.stream = step_sounds.pick_random()# se elige uno random del array
+			step_sound.pitch_scale = randf_range(0.8, 1.2) #se le cambia el pitch
+			step_sound.play()
+			
 			
 
 func _on_lyra_died():

@@ -1,8 +1,8 @@
-extends Node2D
+extends Area2D
 
 #Collision LAYER en la Layer 6 
-@onready var Attackbox = $"../Attackbox"
-@onready var AttackCollision = $"../Attackbox/CollisionShape2D"
+@onready var Attackbox = $Attackbox
+@onready var AttackCollision = $CollisionShape2D
 @onready var timer = $Timer
 
 func _ready():

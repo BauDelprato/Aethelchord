@@ -1,12 +1,12 @@
 [gd_scene format=4 uid="uid://dtlnxnpjbi3xv"]
 
-[ext_resource type="Texture2D" uid="uid://bt3xfeujso6it" path="res://assets/backgrounds/Fondo_Claro_Gris.png" id="1_h7ex6"]
-[ext_resource type="Texture2D" uid="uid://y56cnj2mikc8" path="res://assets/backgrounds/fondo_bosque_verde_oscuro.png" id="2_lm0tn"]
+[ext_resource type="Texture2D" uid="uid://cut3wpalcp88j" path="res://assets/backgrounds/Fondo_Claro_Gris.png" id="1_h7ex6"]
+[ext_resource type="Texture2D" path="res://assets/backgrounds/fondo_bosque_verde_oscuro.png" id="2_lm0tn"]
 [ext_resource type="PackedScene" uid="uid://dcuvfonru1uq0" path="res://scenes/player/Lyra_character_body.tscn" id="3_gd8k0"]
-[ext_resource type="Texture2D" uid="uid://ocpt12ianfla" path="res://assets/backgrounds/Sprite-0001-contorno-negro.png" id="3_gy0fx"]
+[ext_resource type="Texture2D" path="res://assets/backgrounds/Sprite-0001-contorno-negro.png" id="3_gy0fx"]
 [ext_resource type="Texture2D" uid="uid://cx04p3acwfdyd" path="res://assets/tiles/finaltiles/TX Tileset Ground.png" id="4_v6h1u"]
 [ext_resource type="Texture2D" uid="uid://cuuahk6y8is25" path="res://assets/tiles/tileset_32x32(new).png" id="5_mxkts"]
-[ext_resource type="AudioStream" uid="uid://bixhpjk4urni1" path="res://sound/viento_ambient1.ogg" id="7_g55s7"]
+[ext_resource type="AudioStream" uid="uid://bixhpjk4urni1" path="res://sound/music/viento_ambient1.ogg" id="7_g55s7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gd8k0"]
 texture = ExtResource("5_mxkts")

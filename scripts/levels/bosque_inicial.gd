@@ -2,6 +2,7 @@ extends Node2D
 
 
 @export var intro_dialogue: DialogueResource 
+const GloboArriba = preload("res://resources/dialogues/balloon.tscn")
 
 #limites de camara
 @export_category("Scene Limits")

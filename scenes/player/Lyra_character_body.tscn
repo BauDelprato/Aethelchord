@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c8wprm5gusvnd" path="res://assets/sprites/lyra/lyre death.png" id="6_1bugy"]
 [ext_resource type="Texture2D" uid="uid://dplq10wfy3ff7" path="res://assets/sprites/lyra/lyre jump walk.png" id="6_j2ki5"]
 [ext_resource type="Texture2D" uid="uid://bihmd668l1fdm" path="res://assets/sprites/lyra/lyre damage.png" id="7_j2ki5"]
+[ext_resource type="AudioStream" uid="uid://dxrkd8hircfq7" path="res://sound/effects/pasos/PASOS 1.ogg" id="11_1bugy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yqqr5"]
 radius = 8.0
@@ -569,7 +570,9 @@ texture = ExtResource("2_lxlh8")
 hframes = 7
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1390850156]
+position = Vector2(0, -150.41)
 zoom = Vector2(1.2, 1.2)
+position_smoothing_enabled = true
 script = ExtResource("3_08m0r")
 
 [node name="HealthManager" type="Node2D" parent="." unique_id=20784656]
@@ -588,6 +591,7 @@ debug_color = Color(0.9882204, 0, 0.3027967, 0.41960785)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=726138740]
 position = Vector2(4, 0)
 sprite_frames = SubResource("SpriteFrames_mfp5r")
+animation = &"lyra_walk"
 animation = &"lyra_defeated"
 
 [node name="AbilityManager" type="Node2D" parent="." unique_id=2147113723]
@@ -603,4 +607,11 @@ shape = SubResource("CapsuleShape2D_73p6n")
 disabled = true
 debug_color = Color(0.9999997, 0.968882, 0.3187083, 0.41960785)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1950552961]
+stream = ExtResource("11_1bugy")
+volume_db = -25.0
+max_distance = 1143.0
+bus = &"Sounds"
+
 [connection signal="area_entered" from="Hurtbox" to="HealthManager" method="_on_hurtbox_area_entered"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_frame_changed"]

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://vwv428x5ipq3" path="res://scripts/levels/bosque_inicial.gd" id="1_wka7j"]
 [ext_resource type="Texture2D" uid="uid://cnmvjucqnsncb" path="res://assets/Backgrounds/Fondo_escena1_01-bosque-verde-oscuro_XXL.png" id="2_vne54"]
 [ext_resource type="Resource" uid="uid://2thgm8vja7bj" path="res://resources/dialogues/introduction.dialogue" id="2_wka7j"]
-[ext_resource type="AudioStream" uid="uid://bixhpjk4urni1" path="res://sound/viento_ambient1.ogg" id="3_wka7j"]
+[ext_resource type="AudioStream" uid="uid://bixhpjk4urni1" path="res://sound/music/viento_ambient1.ogg" id="3_wka7j"]
 [ext_resource type="PackedScene" uid="uid://dcuvfonru1uq0" path="res://scenes/player/Lyra_character_body.tscn" id="4_o0vi4"]
 [ext_resource type="Texture2D" uid="uid://cex4ups4bsct1" path="res://assets/Backgrounds/Fondo_escena1_01-contorno-negro_XXL.png" id="5_cwe6d"]
 [ext_resource type="Texture2D" uid="uid://yy8xjnchr1bx" path="res://assets/tiles/tileset-0001_tierra_DO.png" id="6_o0vi4"]
