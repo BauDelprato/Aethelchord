@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://cvwtw5eaps0iw" path="res://scripts/NPCs/do/hitbox.gd" id="4_phssb"]
 [ext_resource type="Texture2D" uid="uid://e3achm3x1pfc" path="res://assets/sprites/do/do attack walk.png" id="5_jou8e"]
 [ext_resource type="Script" uid="uid://b6imd7gbi6naw" path="res://scripts/NPCs/do/attackbox.gd" id="7_gdbt6"]
+[ext_resource type="PackedScene" uid="uid://fkchsncejayo" path="res://scenes/UI/boss_interface.tscn" id="8_fne3i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_78v1g"]
 atlas = ExtResource("2_gdbt6")
@@ -242,6 +243,14 @@ script = ExtResource("1_m8lw7")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1425278395]
 sprite_frames = SubResource("SpriteFrames_8w3o6")
 animation = &"do_walking_attack"
+
+[node name="BossInterface" parent="." unique_id=305824886 node_paths=PackedStringArray("health_manager") instance=ExtResource("8_fne3i")]
+offset_left = -38.0
+offset_top = -9.0
+offset_right = 51.0
+offset_bottom = 16.880005
+pivot_offset = Vector2(45, 13)
+health_manager = NodePath("../Hitbox")
 
 [node name="TextArea" type="Area2D" parent="." unique_id=2137094784]
 collision_layer = 0
