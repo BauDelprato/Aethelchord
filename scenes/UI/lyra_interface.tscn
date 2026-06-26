@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://08r4qaikrm08"]
 
 [ext_resource type="Script" uid="uid://b8krwq0se0cr6" path="res://scripts/UI/canvas_layer.gd" id="1_ooh86"]
+[ext_resource type="Texture2D" uid="uid://dhlaxapjf7yp5" path="res://assets/sprites/barra_vida/barra.png" id="2_f5hod"]
+[ext_resource type="Texture2D" uid="uid://ci6ciujlfi0ey" path="res://assets/sprites/barra_vida/back.png" id="3_2t1xt"]
+[ext_resource type="Texture2D" uid="uid://1d73mr8mb0e1" path="res://assets/sprites/barra_vida/background.png" id="4_ujv8u"]
 
 [node name="LyraInterface" type="Control" unique_id=201671588]
 layout_mode = 3
@@ -9,12 +12,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1830966072]
 script = ExtResource("1_ooh86")
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=110073602]
-offset_left = 23.0
-offset_top = 577.0
-offset_right = 365.0
-offset_bottom = 626.0
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1830966072]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=527961393]
+texture_filter = 1
+position = Vector2(123.229004, 47.25)
+scale = Vector2(2.2954197, 2.1166666)
+texture = ExtResource("2_f5hod")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="CanvasLayer/Sprite2D" unique_id=384043225]
+offset_left = -38.287
+offset_top = -15.56
+offset_right = 61.713
+offset_bottom = 14.44
+texture_under = ExtResource("3_2t1xt")
+texture_progress = ExtResource("4_ujv8u")

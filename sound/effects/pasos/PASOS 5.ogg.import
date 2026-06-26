@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ccgl2d7d3fven"
+path="res://.godot/imported/PASOS 5.ogg-bb90c7e209f33e2f598e5dd607db3b27.oggvorbisstr"
+
+[deps]
+
+source_file="res://sound/effects/pasos/PASOS 5.ogg"
+dest_files=["res://.godot/imported/PASOS 5.ogg-bb90c7e209f33e2f598e5dd607db3b27.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

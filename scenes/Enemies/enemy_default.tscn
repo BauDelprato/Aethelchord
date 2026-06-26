@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://b6qpsqdbw567m"]
+
+[ext_resource type="Script" uid="uid://bss1rcbgb3dnl" path="res://scripts/enemies/enemy_1.gd" id="1_kq6oi"]
+[ext_resource type="Texture2D" uid="uid://dji43wd3p35mq" path="res://assets/sprites/dummy/dummy.png" id="2_yvd2k"]
+[ext_resource type="Script" uid="uid://05j7fslisn1q" path="res://scripts/enemies/hitbox.gd" id="3_s0ffn"]
+[ext_resource type="Script" uid="uid://bf1aikq3ctrk3" path="res://scripts/enemies/attack_manager.gd" id="4_2llbr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h55bv"]
+radius = 34.0
+height = 138.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l3ixe"]
+radius = 48.0
+height = 134.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryjyg"]
+size = Vector2(66.5, 129)
+
+[node name="Enemy1" type="CharacterBody2D" unique_id=100668412]
+script = ExtResource("1_kq6oi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1445215298]
+position = Vector2(95, 108.00003)
+scale = Vector2(0.14145659, 0.1232993)
+texture = ExtResource("2_yvd2k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=644693382]
+position = Vector2(104, 111)
+shape = SubResource("CapsuleShape2D_h55bv")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=959993088]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("3_s0ffn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1264151462]
+position = Vector2(103, 113)
+shape = SubResource("CapsuleShape2D_l3ixe")
+debug_color = Color(0.9843137, 0.54901963, 0, 0.41960785)
+
+[node name="AttackManager" type="Node2D" parent="." unique_id=1007635317]
+script = ExtResource("4_2llbr")
+
+[node name="Timer" type="Timer" parent="AttackManager" unique_id=874511535]
+
+[node name="Attackbox" type="Area2D" parent="." unique_id=398705767]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attackbox" unique_id=943518610]
+position = Vector2(35, 110)
+shape = SubResource("RectangleShape2D_ryjyg")
+disabled = true
+
+[connection signal="timeout" from="AttackManager/Timer" to="AttackManager" method="_on_timer_timeout"]

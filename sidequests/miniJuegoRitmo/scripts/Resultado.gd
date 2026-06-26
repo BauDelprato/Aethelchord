@@ -9,11 +9,11 @@ func _ready():
 	
 	# Evaluamos la variable global
 	if Global.minijuego_ganado:
-		titulo.text = "¡Logrado! \n:) "
+		titulo.text = "¡Bien hecho! "
 		btn_reintentar.hide()
 		btn_salir.text = "Continuar" 
 	else:
-		titulo.text = "Intentalo de nuevo :("
+		titulo.text = "Intentalo de nuevo"
 		btn_reintentar.show()
 		btn_salir.text = "Salir"
 
@@ -26,5 +26,5 @@ func _on_button_reintentar_pressed():
 		print("Error al recargar el minijuego")
 
 func _on_button_salir_pressed():
-	if get_tree().change_scene_to_file("res://scenes/menus/titleScreen.tscn") != OK:
+	if get_tree().change_scene_to_file("res://scenes/levels/alcantarilla.tscn") != OK:
 		print("Error al salir del minijuego")
