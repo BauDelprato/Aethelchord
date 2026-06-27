@@ -2,28 +2,36 @@
 
 [ext_resource type="Script" uid="uid://c8n0m8ga7ch5k" path="res://scenes/UI/boss_interface.gd" id="1_ab058"]
 
-[sub_resource type="Gradient" id="Gradient_ab058"]
-colors = PackedColorArray(1, 0, 0, 1, 0.2315526, 0.74422455, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ab058"]
+bg_color = Color(0.105882354, 0.105882354, 0.105882354, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_t3rur"]
-gradient = SubResource("Gradient_ab058")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t3rur"]
+bg_color = Color(0.67, 0, 0.011166496, 1)
 
 [node name="BossInterface" type="Control" unique_id=305824886]
 layout_mode = 3
+anchors_preset = 0
 offset_top = 7.0
 offset_right = 1152.0
 offset_bottom = 648.0
-grow_horizontal = 2
-grow_vertical = 2
 script = ExtResource("1_ab058")
 
-[node name="ProgressBar" type="TextureProgressBar" parent="." unique_id=586056470]
-layout_mode = 1
-anchors_preset = -1
-offset_left = 41.0
-offset_top = 41.0
-offset_right = 1226.5557
-offset_bottom = 217.66667
-scale = Vector2(0.9, 0.9)
-texture_progress = SubResource("GradientTexture1D_t3rur")
-tint_under = Color(0.27395758, 0.27395758, 0.27395758, 0.90300006)
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1059799998]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 15.0
+pivot_offset = Vector2(84, 13)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=546872272]
+layout_mode = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer" unique_id=784702465]
+custom_minimum_size = Vector2(100, 10)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_ab058")
+theme_override_styles/fill = SubResource("StyleBoxFlat_t3rur")
+show_percentage = false

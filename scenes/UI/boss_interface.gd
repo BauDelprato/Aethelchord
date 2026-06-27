@@ -1,6 +1,6 @@
 extends Node 
 
-@onready var barra_vida = $ProgressBar 
+@onready var barra_vida = $MarginContainer/VBoxContainer/ProgressBar
 
 @export var health_manager: Node
 
@@ -12,6 +12,8 @@ func _ready():
 	barra_vida.max_value = health_manager.max_health
 	barra_vida.value = health_manager.current_health
 	health_manager.health_changed.connect(_on_health_changed)
+	
+	_on_health_changed(health_manager.current_health)
 
 func _on_health_changed(current):
 	barra_vida.value = current

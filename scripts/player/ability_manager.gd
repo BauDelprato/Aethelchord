@@ -1,6 +1,6 @@
 extends Node2D
 
-var enabled := true
+var enabled := false
 
 @onready var Attackbox = $"../Attackbox"
 @onready var AttackCollision = $"../Attackbox/CollisionShape2D"

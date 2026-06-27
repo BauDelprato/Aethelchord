@@ -608,7 +608,7 @@ debug_color = Color(0.9999997, 0.968882, 0.3187083, 0.41960785)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1950552961]
 stream = ExtResource("11_1bugy")
-volume_db = -25.0
+volume_db = -20.63
 max_distance = 1143.0
 bus = &"Sounds"
 

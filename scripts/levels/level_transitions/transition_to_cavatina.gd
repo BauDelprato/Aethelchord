@@ -5,6 +5,6 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.name == "Lyra":
-		print("TRANSICIOOOOON") #debug, eliminar una vez que se compruebe que la transicion funciona
+		print("TRANSICION bosque -> cavatina") #debug, eliminar una vez que se compruebe que la transicion funciona
 		LevelManager.load_level("res://scenes/levels/cavatina_village.tscn")
 		#PASAR SIEMPRE RUTAS COMPLETAS 	

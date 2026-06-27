@@ -233,23 +233,24 @@ size = Vector2(183, 114)
 radius = 39.0
 height = 122.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tqst0"]
-radius = 44.0
-height = 182.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fne3i"]
+size = Vector2(299, 113)
 
 [node name="Do" type="Node2D" unique_id=1086787759]
 script = ExtResource("1_m8lw7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1425278395]
 sprite_frames = SubResource("SpriteFrames_8w3o6")
-animation = &"do_walking_attack"
+animation = &"do_idle_attack"
+frame = 4
+frame_progress = 1.0
 
 [node name="BossInterface" parent="." unique_id=305824886 node_paths=PackedStringArray("health_manager") instance=ExtResource("8_fne3i")]
-offset_left = -38.0
-offset_top = -9.0
-offset_right = 51.0
-offset_bottom = 16.880005
-pivot_offset = Vector2(45, 13)
+offset_left = -48.0
+offset_top = -75.0
+offset_right = 52.0
+offset_bottom = -65.0
+pivot_offset = Vector2(241, -73)
 health_manager = NodePath("../Hitbox")
 
 [node name="TextArea" type="Area2D" parent="." unique_id=2137094784]
@@ -266,7 +267,7 @@ collision_mask = 16
 script = ExtResource("4_phssb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=739352696]
-position = Vector2(1, 12)
+position = Vector2(0, 10)
 shape = SubResource("CapsuleShape2D_arvq4")
 debug_color = Color(0.9597656, 0.046804205, 0.49611515, 0.41960785)
 
@@ -280,8 +281,8 @@ collision_layer = 32
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attackbox" unique_id=2047369857]
-position = Vector2(89, 11)
-shape = SubResource("CapsuleShape2D_tqst0")
+position = Vector2(179.5, 9.5)
+shape = SubResource("RectangleShape2D_fne3i")
 disabled = true
 debug_color = Color(0.63929754, 0.5256333, 0, 0.41960785)
 

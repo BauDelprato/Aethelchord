@@ -1,18 +1,23 @@
 extends Node2D
 
+@onready var camara_jugador = $Lyra/Camera2D 
+
 @export var intro_dialogue: DialogueResource 
 const GloboArriba = preload("res://resources/dialogues/balloon.tscn")
 
 #limites de camara
 @export_category("Scene Limits")
-@export var limit_left: int = -60
-@export var limit_right: int = 8100
-@export var limit_top: int = -20
+@export var limit_left: int = -1
+@export var limit_right: int = 8109
+@export var limit_top: int = -16
 @export var limit_bottom: int = 600
 
 
 func _ready():
-	$Lyra/AbilityManager.enabled = false #DESACTIVA el ataque, llamar a enabled = false para desactivar
+	camara_jugador.limit_left = limit_left
+	camara_jugador.limit_right = limit_right
+	camara_jugador.limit_top = limit_top
+	camara_jugador.limit_bottom = limit_bottom
 	
 
 func _on_trigger_intro_body_entered(body):

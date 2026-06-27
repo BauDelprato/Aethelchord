@@ -1,7 +1,9 @@
 extends Node2D
 
-var posicion_jugador: Vector2 = Vector2.ZERO
+var posicion_jugador: Vector2 = Vector2.ZERO  #este es para la transicion alcantarillas -> minijuego
+var posicion_jugador2: Vector2 = Vector2.ZERO #este es para alcantarillas -> cavatina
 var volviendo_de_minijuego: bool = false
+var volviendo_de_alcantarilla: bool = false
 
 var score = 0
 var combo = 0

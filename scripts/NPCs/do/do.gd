@@ -6,11 +6,14 @@ extends Node2D
 @onready var animation = $AnimatedSprite2D
 @onready var lyra_position = $"../Lyra"
 @onready var boss_interface = $BossInterface
+@onready var ability_manager = $"../Lyra/AbilityManager"
+
 var is_player_close = false
 var is_dialogue_active = false
 var taking_damage = false
-var do_defeated = false
-var charla_post_derrota_hecha = false
+var do_defeated #para la animacion del do
+var fight_done #para q el dialogo no se repita
+var alcantarillas_unblocked = false #para habilitar alcantarillas dsp del dialogo
 const lyra_and_do1 = preload("res://resources/dialogues/lyra_and_do.dialogue")
 const lyra_and_do2 = preload("res://resources/dialogues/lyra_and_do2.dialogue")
 # Called when the node enters the scene tree for the first time.
@@ -32,14 +35,10 @@ func _process(delta):
 
 func _unhandled_input(event):#solo se ejecuta si el diálogo no consumió el botón primero
 	if event.is_action_pressed("interact") and is_player_close and not is_dialogue_active:
-		if not do_defeated:
+		if not fight_done:
 			DialogueManager.show_dialogue_balloon(lyra_and_do1)
-		elif not charla_post_derrota_hecha:
-			#si está derrotado pero no han hablado el 2do dialogo
-			DialogueManager.show_dialogue_balloon(lyra_and_do2)
 		else:
-			#desde la segunda interacción post-pelea
-			Eventos.mostrar_aviso_interaccion.emit("Do está descansando...")
+			DialogueManager.show_dialogue_balloon(lyra_and_do2)
 
 #funcion para actualizar la animación cada frame (no borrar)
 func _physics_process(delta):
@@ -80,12 +79,14 @@ func _on_dialogue_ended(resource):
 		if not do_defeated: 
 			_attack_phase()
 	elif resource == lyra_and_do2:
-		charla_post_derrota_hecha = true
-		print("termina la charla")
 		do_defeated = false
+		alcantarillas_unblocked = true
+		print("termina la charla")
+	
 	
 
 func _attack_phase():
+	ability_manager.enabled = true
 	$AttackManager/Timer.start() #Inicia el timer de los ataques en AttackManager
 	print("FASE ATAQUE")
 	$TextArea.monitoring = false
@@ -96,6 +97,7 @@ func _attack_phase():
 func _on_enemy_defeated():
 	print("DO DERROTADO")
 	do_defeated = true
+	fight_done = true
 	$AttackManager/Timer.stop()
 	$TextArea.monitoring = true
 	#hurtbox.monitoring = false

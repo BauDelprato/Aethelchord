@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bttg7nmyq36av" path="res://scenes/HUD.tscn" id="5_h4qjk"]
 [ext_resource type="PackedScene" uid="uid://qbawjad4msei" path="res://scenes/Enemies/enemy_1.tscn" id="6_ytqtp"]
 [ext_resource type="Script" uid="uid://chg17wvkmwmml" path="res://scripts/levels/alcantarillas/zona_agua.gd" id="7_mcfu4"]
+[ext_resource type="Script" uid="uid://dcknq7548lqir" path="res://scripts/levels/level_transitions/transition_back_to_cavatina.gd" id="8_e40d3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_be2jk"]
 texture = ExtResource("1_71cwc")
@@ -495,6 +496,9 @@ size = Vector2(1791, 46)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mcfu4"]
 size = Vector2(672, 15)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mh3gx"]
+size = Vector2(22, 108)
+
 [node name="Alcantarilla" type="Node2D" unique_id=1242284921]
 script = ExtResource("1_be2jk")
 
@@ -513,7 +517,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAADAAAAAAABAAAAAAADAAAAAAACAAAAAAADAAA
 tile_set = SubResource("TileSet_ytqtp")
 
 [node name="Lyra" parent="." unique_id=1019969014 instance=ExtResource("2_be2jk")]
-position = Vector2(-185, -40)
+position = Vector2(-239, -39)
 scale = Vector2(0.8, 0.8)
 
 [node name="Water" type="TileMapLayer" parent="." unique_id=556329530]
@@ -547,6 +551,13 @@ shape = SubResource("RectangleShape2D_e40d3")
 position = Vector2(1456, 25.5)
 shape = SubResource("RectangleShape2D_mcfu4")
 debug_color = Color(0.77761513, 0.19124258, 0.95805734, 0.41960785)
+
+[node name="TransitionBackToCavatina" type="Area2D" parent="." unique_id=1500687917]
+script = ExtResource("8_e40d3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionBackToCavatina" unique_id=104206428]
+position = Vector2(-277, -50)
+shape = SubResource("RectangleShape2D_mh3gx")
 
 [connection signal="body_entered" from="TriggerMiniJuego" to="TriggerMiniJuego" method="_on_body_entered"]
 [connection signal="body_exited" from="TriggerMiniJuego" to="TriggerMiniJuego" method="_on_body_exited"]
