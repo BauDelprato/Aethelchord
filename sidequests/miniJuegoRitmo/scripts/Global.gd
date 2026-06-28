@@ -15,8 +15,6 @@ var grade = "NA"
 
 var minijuego_ganado = false
 
-
-
 func set_score(new):
 	score = new
 	if score > 250000:

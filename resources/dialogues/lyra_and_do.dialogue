@@ -22,6 +22,7 @@ Lyra:
 - Porque alguien tenía que hacerlo.
 ???: Hm... Las palabras son fáciles. Los actos no tanto.
 ???: Pongamos a prueba tu valentía pequeña Lyra! Te enseñaré algo para que puedas defenderte: [wave]El canto del Do[/wave].
+do Eventos.c_attack_unlocked.emit()
 do Eventos.mostrar_aviso_interaccion.emit("Toca 'C' para atacar")
 ???: Y ahora... Te desafío a un duelo!
 => END

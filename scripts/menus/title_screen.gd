@@ -2,13 +2,14 @@ extends Control
 
 @onready var title: TextureRect = $Title
 @onready var button_manager: Control = $Button_manager
-@onready var options: Panel = $Options
+@onready var options: Panel = $OptionsPanel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	title.visible = true
 	button_manager.visible = true
 	options.visible = false
+	options.back_pressed.connect(_on_options_back)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,5 +36,7 @@ func _on_mini_juego_pressed() -> void:
 	get_tree().change_scene_to_file("res://sidequests/miniJuegoRitmo/scenes/Game.tscn") # Replace with function body.
 
 
-func _on_atras_button_pressed() -> void:
-	_ready() 
+func _on_options_back():
+	options.hide()
+	title.show()
+	button_manager.show()

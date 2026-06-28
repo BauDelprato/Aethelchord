@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://23q3cdgrwuyc" path="res://scripts/menus/title_screen.gd" id="1_7vamw"]
 [ext_resource type="Texture2D" uid="uid://myayjb3bhog7" path="res://assets/Backgrounds/titleScreenBackground.png" id="1_y8l25"]
-[ext_resource type="Texture2D" uid="uid://ci33y8pp6l84e" path="res://assets/sprites/titleScreen/aethelchord.webp" id="3_x612o"]
+[ext_resource type="Texture2D" uid="uid://kfp6ju3de1w8" path="res://assets/sprites/titleScreen/titlename-removebg-preview.png" id="3_x612o"]
 [ext_resource type="FontFile" uid="uid://dgws5s3ja0e0g" path="res://assets/fonts/blacher.regular.otf" id="4_aofsy"]
 [ext_resource type="PackedScene" uid="uid://cvdqs78fe7b7u" path="res://scenes/menus/options.tscn" id="5_x612o"]
 [ext_resource type="AudioStream" uid="uid://bixhpjk4urni1" path="res://sound/music/viento_ambient1.ogg" id="6_x612o"]
@@ -21,11 +21,12 @@ texture = ExtResource("1_y8l25")
 
 [node name="Title" type="TextureRect" parent="." unique_id=1224235245]
 layout_mode = 0
-offset_left = 280.0
-offset_top = 128.0
-offset_right = 879.0
-offset_bottom = 247.0
+offset_left = 220.0
+offset_top = 155.0
+offset_right = 932.0
+offset_bottom = 307.0
 texture = ExtResource("3_x612o")
+expand_mode = 1
 
 [node name="Button_manager" type="Control" parent="." unique_id=1915493385]
 anchors_preset = 0
@@ -43,6 +44,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_aofsy")
 theme_override_font_sizes/font_size = 38
 text = "Empezar"
+flat = true
 
 [node name="Opciones" type="Button" parent="Button_manager" unique_id=1716912719]
 layout_mode = 0
@@ -55,6 +57,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_aofsy")
 theme_override_font_sizes/font_size = 38
 text = "Opciones"
+flat = true
 
 [node name="Salir" type="Button" parent="Button_manager" unique_id=1285751210]
 layout_mode = 0
@@ -67,6 +70,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_aofsy")
 theme_override_font_sizes/font_size = 38
 text = "Salir del juego"
+flat = true
 
 [node name="MiniJuego" type="Button" parent="Button_manager" unique_id=1451615856]
 visible = false
@@ -81,12 +85,12 @@ theme_override_fonts/font = ExtResource("4_aofsy")
 theme_override_font_sizes/font_size = 24
 text = "Mini juego"
 
-[node name="Options" parent="." unique_id=1630081222 instance=ExtResource("5_x612o")]
+[node name="OptionsPanel" parent="." unique_id=1630081222 instance=ExtResource("5_x612o")]
 layout_mode = 1
-offset_left = 336.0
-offset_top = 198.0
-offset_right = 820.0
-offset_bottom = 517.0
+offset_left = 350.0
+offset_top = 214.0
+offset_right = 834.0
+offset_bottom = 533.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=91864135]
 stream = ExtResource("6_x612o")

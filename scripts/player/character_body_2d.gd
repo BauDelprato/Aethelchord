@@ -138,6 +138,7 @@ func _on_lyra_died():
 	# forzar animación de muerte (interrumpe cualquier otra)
 	animation.stop()
 	animation.play("lyra_defeated")
+	Eventos.lyra_died.emit()
 	
 	# iniciar respawn
 	respawn()
@@ -156,3 +157,4 @@ func respawn():
 	is_attacking = false
 	# reset animación
 	animation.play("lyra_idle")
+	Eventos.lyra_respawned.emit()
