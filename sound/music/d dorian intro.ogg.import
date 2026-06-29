@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://m740unxy2juf"
+path="res://.godot/imported/d dorian intro.ogg-277939149e87d70c0b0664125f11cb6e.oggvorbisstr"
+
+[deps]
+
+source_file="res://sound/music/d dorian intro.ogg"
+dest_files=["res://.godot/imported/d dorian intro.ogg-277939149e87d70c0b0664125f11cb6e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://kfp6ju3de1w8" path="res://assets/sprites/titleScreen/titlename-removebg-preview.png" id="3_x612o"]
 [ext_resource type="FontFile" uid="uid://dgws5s3ja0e0g" path="res://assets/fonts/blacher.regular.otf" id="4_aofsy"]
 [ext_resource type="PackedScene" uid="uid://cvdqs78fe7b7u" path="res://scenes/menus/options.tscn" id="5_x612o"]
-[ext_resource type="AudioStream" uid="uid://bixhpjk4urni1" path="res://sound/music/viento_ambient1.ogg" id="6_x612o"]
+[ext_resource type="AudioStream" uid="uid://m740unxy2juf" path="res://sound/music/d dorian intro.ogg" id="6_x612o"]
 
 [node name="TitleScreen" type="Control" unique_id=375118961]
 layout_mode = 3
@@ -94,8 +94,10 @@ offset_bottom = 533.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=91864135]
 stream = ExtResource("6_x612o")
+volume_db = -4.127
 autoplay = true
 bus = &"Music"
+parameters/looping = true
 
 [connection signal="pressed" from="Button_manager/Empezar" to="." method="_on_empezar_pressed"]
 [connection signal="pressed" from="Button_manager/Opciones" to="." method="_on_opciones_pressed"]

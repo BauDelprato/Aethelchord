@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://qbawjad4msei" path="res://scenes/Enemies/enemy_1.tscn" id="6_ytqtp"]
 [ext_resource type="Script" uid="uid://chg17wvkmwmml" path="res://scripts/levels/alcantarillas/zona_agua.gd" id="7_mcfu4"]
 [ext_resource type="Script" uid="uid://dcknq7548lqir" path="res://scripts/levels/level_transitions/transition_back_to_cavatina.gd" id="8_e40d3"]
+[ext_resource type="AudioStream" uid="uid://c1qo45ggf65f4" path="res://sound/music/Cmajor.ogg" id="9_mh3gx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_be2jk"]
 texture = ExtResource("1_71cwc")
@@ -558,6 +559,13 @@ script = ExtResource("8_e40d3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionBackToCavatina" unique_id=104206428]
 position = Vector2(-277, -50)
 shape = SubResource("RectangleShape2D_mh3gx")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1373261594]
+stream = ExtResource("9_mh3gx")
+volume_db = -10.73
+autoplay = true
+bus = &"Music"
+parameters/looping = true
 
 [connection signal="body_entered" from="TriggerMiniJuego" to="TriggerMiniJuego" method="_on_body_entered"]
 [connection signal="body_exited" from="TriggerMiniJuego" to="TriggerMiniJuego" method="_on_body_exited"]
